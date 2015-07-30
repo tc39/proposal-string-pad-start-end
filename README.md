@@ -1,4 +1,4 @@
-# String.prototype.padLeft / String.prototype.padRight
+# [String.prototype.padLeft](https://github.com/es-shims/String.prototype.padLeft) / [String.prototype.padRight](https://github.com/es-shims/String.prototype.padRight)
 Proposal, specs, tests, and reference implementation for String.prototype.padLeft/padRight.
 
 This [initial](http://wiki.ecmascript.org/doku.php?id=strawman:string_padding) proposal was drafted by [@KevinGrandon](https://github.com/kevingrandon) with input from [@rwaldron](https://github.com/rwaldron) and [@dherman](https://github.com/dherman).
