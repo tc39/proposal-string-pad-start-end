@@ -12,6 +12,7 @@
   <p>When the _padLeft_ method is called, the following steps are taken:</p>
   <emu-alg>
     1. Let _O_ be RequireObjectCoercible(*this* value).
+    1. ReturnIfAbrupt(_O_).
     1. Let _S_ be ToString(_O_).
     1. ReturnIfAbrupt(_S_).
     1. Let _stringLength_ be ToLength(Get(_S_, *"length"*)).
@@ -38,6 +39,7 @@
   <p>When the _padRight_ method is called, the following steps are taken:</p>
   <emu-alg>
     1. Let _O_ be RequireObjectCoercible(*this* value).
+    1. ReturnIfAbrupt(_O_).
     1. Let _S_ be ToString(_O_).
     1. ReturnIfAbrupt(_S_).
     1. Let _stringLength_ be ToLength(Get(_S_, *"length"*)).

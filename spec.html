@@ -12,6 +12,7 @@
   <p>When the <var>padLeft</var> method is called, the following steps are taken:</p>
   <emu-alg><ol>
   <li>Let <var>O</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-requireobjectcoercible">RequireObjectCoercible</a>(<emu-val>this</emu-val> value).</li>
+  <li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>O</var>).</li>
   <li>Let <var>S</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>O</var>).</li>
   <li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>S</var>).</li>
   <li>Let <var>stringLength</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tolength">ToLength</a>(<a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-get-o-p">Get</a>(<var>S</var>, <emu-val>"length"</emu-val>)).</li>
@@ -41,6 +42,7 @@
   <p>When the <var>padRight</var> method is called, the following steps are taken:</p>
   <emu-alg><ol>
   <li>Let <var>O</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-requireobjectcoercible">RequireObjectCoercible</a>(<emu-val>this</emu-val> value).</li>
+  <li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>O</var>).</li>
   <li>Let <var>S</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>O</var>).</li>
   <li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>S</var>).</li>
   <li>Let <var>stringLength</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tolength">ToLength</a>(<a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-get-o-p">Get</a>(<var>S</var>, <emu-val>"length"</emu-val>)).</li>
