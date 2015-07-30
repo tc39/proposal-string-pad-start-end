@@ -1,8 +1,8 @@
 # String.prototype.padLeft / String.prototype.padRight
 Proposal, specs, tests, and reference implementation for String.prototype.padLeft/padRight.
 
-This [initial](http://wiki.ecmascript.org/doku.php?id=strawman:string_padding) proposal was drafted by @KevinGrandon with input from @rwaldron and @dherman.
-Updated spec drafted by @ljharb with input from @rwaldron, @awbjs, and @dherman.
+This [initial](http://wiki.ecmascript.org/doku.php?id=strawman:string_padding) proposal was drafted by [@KevinGrandon](https://github.com/kevingrandon) with input from [@rwaldron](https://github.com/rwaldron) and [@dherman](https://github.com/dherman).
+Updated spec drafted by [@ljharb](https://github.com/ljharb) with input from [@rwaldron](https://github.com/rwaldron), [@allenwb](https://github.com/allenwb), and [@dherman](https://github.com/dherman).
 
 ## Rationale
 Without a reasonable way to pad a string using native methods, working with JavaScript strings today is more painful than it should be. Without these functions, the language feels incomplete, and is a paper cut to what could be a very polished experience.
