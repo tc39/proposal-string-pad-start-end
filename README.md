@@ -15,4 +15,4 @@ It is highly probable that the majority of current string padding implementation
 You can view the spec in [markdown format](spec.md) or rendered as [HTML](http://ljharb.github.io/proposal-string-pad-left-right/).
 
 ## Naming
-For consistency with [trimLeft/trimRight](https://github.com/sebmarkbage/ecmascript-string-left-right-trim)), and `reduce`/`reduceRight`, despite the existence of `startsWith`/`endsWith`, we have settled on `padRight` and `padLeft`.
+For consistency with [trimLeft/trimRight](https://github.com/sebmarkbage/ecmascript-string-left-right-trim), and `reduce`/`reduceRight`, despite the existence of `startsWith`/`endsWith`, we have settled on `padRight` and `padLeft`.
