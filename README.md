@@ -16,3 +16,6 @@ You can view the spec in [markdown format](spec.md) or rendered as [HTML](http:/
 
 ## Naming
 For consistency with [trimLeft/trimRight](https://github.com/sebmarkbage/ecmascript-string-left-right-trim), and `reduce`/`reduceRight`, despite the existence of `startsWith`/`endsWith`, we have settled on `padRight` and `padLeft`.
+
+## Semantics of "min length" vs "max length"
+While updating this proposal with spec language, we discussed at length whether the first parameter should determine the minimum length or the maximum length of the padded string. Specifically, "min length" semantics says `'foo'.padRight(4, '12')` would output `foo12`, and "max length" semantics would output `foo1`. Since one of the primary use cases of `padLeft`/`padRight` is for formatting monospaced text in columns, and since "min length" semantics can be achieved via `String#repeat`, we decided that "max length" was the far more useful approach.
