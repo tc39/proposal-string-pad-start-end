@@ -20,7 +20,7 @@
   <li>If <var>fillString</var> is <emu-val>undefined</emu-val>, let <var>fillStr</var> be the empty String.</li>
   <li>Else, let <var>fillStr</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>fillString</var>).</li>
   <li>If <var>fillStr</var> is the empty String, let <var>fillStr</var> be *<code>" "</code>* (a string consisting of a single space).</li>
-  <li>Let <var>intMaxLength</var> be max(<var>stringLength</var>, <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tolength">ToLength</a>(<var>maxLength</var>))</li>
+  <li>Let <var>intMaxLength</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tolength">ToLength</a>(<var>maxLength</var>).</li>
   <li>If <var>intMaxLength</var> is not greater than <var>stringLength</var>, return <var>S</var>.</li>
   <li>Let <var>fillLen</var> be <var>intMaxLength</var> - <var>stringLength</var>.</li>
   <li>Let <var>stringFiller</var> be the empty String.</li>
@@ -50,7 +50,7 @@
   <li>If <var>fillString</var> is <emu-val>undefined</emu-val>, let <var>fillStr</var> be the empty String.</li>
   <li>Else, let <var>fillStr</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>fillString</var>).</li>
   <li>If <var>fillStr</var> is the empty String, let <var>fillStr</var> be *<code>" "</code>* (a string consisting of a single space).</li>
-  <li>Let <var>intMaxLength</var> be max(<var>stringLength</var>, <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tolength">ToLength</a>(<var>maxLength</var>))</li>
+  <li>Let <var>intMaxLength</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tolength">ToLength</a>(<var>maxLength</var>).</li>
   <li>If <var>intMaxLength</var> is not greater than <var>stringLength</var>, return <var>S</var>.</li>
   <li>Let <var>fillLen</var> be <var>intMaxLength</var> - <var>stringLength</var>.</li>
   <li>Let <var>stringFiller</var> be the empty String.</li>

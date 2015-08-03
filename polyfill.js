@@ -11,7 +11,6 @@ const ToLength = argument => {
 	if (len > MAX_SAFE_INTEGER) { return MAX_SAFE_INTEGER; }
 	return len;
 };
-const max = Math.max;
 
 if (!String.prototype.padLeft) {
 	String.prototype.padLeft = function padLeft(maxLength, fillString = ' ') {
@@ -20,7 +19,7 @@ if (!String.prototype.padLeft) {
 		const stringLength = ToLength(S.length);
 		let fillStr = typeof fillString === 'undefined' ? '' : String(fillString);
 		if (fillStr === '') { fillStr = ' '; }
-		const intMaxLength = max(stringLength, ToLength(maxLength));
+		const intMaxLength = ToLength(maxLength);
 		if (intMaxLength <= stringLength) { return S; }
 		const fillLen = intMaxLength - stringLength;
 		let stringFiller = '';
@@ -38,7 +37,7 @@ if (!String.prototype.padRight) {
 		const stringLength = ToLength(S.length);
 		let fillStr = typeof fillString === 'undefined' ? '' : String(fillString);
 		if (fillStr === '') { fillStr = ' '; }
-		const intMaxLength = max(stringLength, ToLength(maxLength));
+		const intMaxLength = ToLength(maxLength);
 		if (intMaxLength <= stringLength) { return S; }
 		const fillLen = intMaxLength - stringLength;
 		let stringFiller = '';
