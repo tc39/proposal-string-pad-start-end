@@ -13,7 +13,7 @@ When the _padLeft_ method is called, the following steps are taken:
   1. If _fillString_ is *undefined*, let _fillStr_ be the empty String.
   1. Else, let _fillStr_ be ToString(_fillString_).
   1. If _fillStr_ is the empty String, let _fillStr_ be *" "* (a string consisting of a single space).
-  1. Let _intMaxLength_ be max(_stringLength_, ToLength(_maxLength_))
+  1. Let _intMaxLength_ be ToLength(_maxLength_).
   1. If _intMaxLength_ is not greater than _stringLength_, return _S_.
   1. Let _fillLen_ be _intMaxLength_ - _stringLength_.
   1. Let _stringFiller_ be the empty String.
@@ -38,7 +38,7 @@ When the _padRight_ method is called, the following steps are taken:
   1. If _fillString_ is *undefined*, let _fillStr_ be the empty String.
   1. Else, let _fillStr_ be ToString(_fillString_).
   1. If _fillStr_ is the empty String, let _fillStr_ be *" "* (a string consisting of a single space).
-  1. Let _intMaxLength_ be max(_stringLength_, ToLength(_maxLength_))
+  1. Let _intMaxLength_ be ToLength(_maxLength_).
   1. If _intMaxLength_ is not greater than _stringLength_, return _S_.
   1. Let _fillLen_ be _intMaxLength_ - _stringLength_.
   1. Let _stringFiller_ be the empty String.
