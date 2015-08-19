@@ -29,8 +29,8 @@
 	"homepage": "https://github.com/ljharb/proposal-string-pad-left-right#readme",
 	"dependencies": {},
 	"devDependencies": {
-		"ecmarkup": "^1.7.0",
+		"ecmarkup": "^2.0.0-beta2",
 		"js-beautify": "^1.5.10",
-		"tape": "^4.0.3"
+		"tape": "^4.2.0"
 	}
 }
