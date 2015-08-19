@@ -4,7 +4,7 @@
 	"description": "ES7 spec proposal for String.prototype.{padLeft,padRight}",
 	"main": "index.js",
 	"scripts": {
-		"build": "ecmarkup spec.emu | js-beautify --type=html -t -o spec.html",
+		"build": "ecmarkup spec.emu spec.html ; js-beautify spec.html --type=html -t -o spec.html",
 		"prepublish": "npm run build && echo >&2 'no publishing' && exit 255"
 	},
 	"repository": {
