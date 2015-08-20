@@ -4,7 +4,7 @@
 	"description": "ES7 spec proposal for String.prototype.{padLeft,padRight}",
 	"main": "index.js",
 	"scripts": {
-		"build": "ecmarkup spec.emu spec.html ; js-beautify spec.html --type=html -t -o spec.html",
+		"build": "ecmarkup spec.emu | js-beautify -f - --type=html -t > spec.html",
 		"prepublish": "npm run build && echo >&2 'no publishing' && exit 255"
 	},
 	"repository": {
@@ -29,7 +29,7 @@
 	"homepage": "https://github.com/ljharb/proposal-string-pad-left-right#readme",
 	"dependencies": {},
 	"devDependencies": {
-		"ecmarkup": "^2.0.0-beta2",
+		"ecmarkup": "^2.0.0-beta3",
 		"js-beautify": "^1.5.10",
 		"tape": "^4.2.0"
 	}
