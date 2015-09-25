@@ -21,3 +21,6 @@ For consistency with [trimLeft/trimRight](https://github.com/sebmarkbage/ecmascr
 
 ## Semantics of "min length" vs "max length"
 While updating this proposal with spec language, we discussed at length whether the first parameter should determine the minimum length or the maximum length of the padded string. Specifically, "min length" semantics says `'foo'.padRight(4, '12')` would output `foo12`, and "max length" semantics would output `foo1`. Since one of the primary use cases of `padLeft`/`padRight` is for formatting monospaced text in columns, and since "min length" semantics can be achieved via `String#repeat`, we decided that "max length" was the far more useful approach.
+
+## Left padding, with respect to the fill string: consistency with other languages
+Per https://github.com/ljharb/proposal-string-pad-left-right/issues/6, the only languages we found that support multiple character fill strings that provide both "left" and "right" functionality are Ruby and PHP. Both language’s form of “pad on the left” takes the *first* part of the fill string, not the last. The clear example of why this matters is: `"abc".padLeft(10, "0123456789")` - taking the last part of the fill string gives `"3456789abc"`, whereas taking the first part gives `"0123456abc"`. In other words, `string.padLeft(mask.length, mask)` should do what one expects.

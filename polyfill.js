@@ -26,7 +26,7 @@ if (!String.prototype.padLeft) {
 		while (stringFiller.length < fillLen) {
 			stringFiller += fillStr;
 		}
-		return stringFiller.slice(-fillLen) + S;
+		return stringFiller.slice(0, fillLen) + S;
 	};
 }
 

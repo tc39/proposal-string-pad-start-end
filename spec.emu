@@ -27,7 +27,7 @@
 		1. Let _stringFiller_ be the empty String.
 		1. Repeat, while the length of _stringFiller_ is less than _fillLen_:
 			1. Let _stringFiller_ be a new String value computed by the concatenation of _stringFiller_ and _fillStr_.
-		1. Return a new String value computed by the concatenation of the last _fillLen_ elements of _stringFiller_, and _S_.
+		1. Return a new String value computed by the concatenation of the first _fillLen_ elements of _stringFiller_, and _S_.
 	</emu-alg>
 	<emu-note>The `length` property of the `padLeft` method is *1*.</emu-note>
 </emu-clause>
