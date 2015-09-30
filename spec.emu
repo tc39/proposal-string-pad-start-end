@@ -4,6 +4,11 @@
 <link rel="stylesheet" href="./spec.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
 <script src="./spec.js"></script>
+<pre class="metadata">
+title: String.prototype.padLeft / padRight
+stage: 1
+contributors: Jordan Harband
+</pre>
 <emu-clause id="String.prototype.padLeft">
 	<h1>String.prototype.padLeft( maxLength [ , fillString ] )</h1>
 	<p>The first argument _maxLength_ will be clamped such that it can be no smaller than the length of the *this* value.</p>
