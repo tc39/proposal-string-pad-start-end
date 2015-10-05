@@ -7,7 +7,7 @@ const RequireObjectCoercible = O => {
 const MAX_SAFE_INTEGER = Number.MAX_SAFE_INTEGER || Math.pow(2, 53) - 1;
 const ToLength = argument => {
 	const len = Number(argument);
-	if (len <= 0) { return 0; }
+	if (Number.isNaN(len) || len <= 0) { return 0; }
 	if (len > MAX_SAFE_INTEGER) { return MAX_SAFE_INTEGER; }
 	return len;
 };
