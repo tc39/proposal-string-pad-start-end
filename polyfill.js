@@ -16,11 +16,11 @@ if (!String.prototype.padLeft) {
 	String.prototype.padLeft = function padLeft(maxLength, fillString = ' ') {
 		const O = RequireObjectCoercible(this);
 		const S = String(O);
+		const intMaxLength = ToLength(maxLength);
 		const stringLength = ToLength(S.length);
+		if (intMaxLength <= stringLength) { return S; }
 		let fillStr = typeof fillString === 'undefined' ? '' : String(fillString);
 		if (fillStr === '') { fillStr = ' '; }
-		const intMaxLength = ToLength(maxLength);
-		if (intMaxLength <= stringLength) { return S; }
 		const fillLen = intMaxLength - stringLength;
 		let stringFiller = '';
 		while (stringFiller.length < fillLen) {
@@ -34,11 +34,11 @@ if (!String.prototype.padRight) {
 	String.prototype.padRight = function padRight(maxLength, fillString = ' ') {
 		const O = RequireObjectCoercible(this);
 		const S = String(O);
+		const intMaxLength = ToLength(maxLength);
 		const stringLength = ToLength(S.length);
+		if (intMaxLength <= stringLength) { return S; }
 		let fillStr = typeof fillString === 'undefined' ? '' : String(fillString);
 		if (fillStr === '') { fillStr = ' '; }
-		const intMaxLength = ToLength(maxLength);
-		if (intMaxLength <= stringLength) { return S; }
 		const fillLen = intMaxLength - stringLength;
 		let stringFiller = '';
 		while (stringFiller.length < fillLen) {

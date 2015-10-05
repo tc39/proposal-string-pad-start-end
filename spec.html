@@ -19,7 +19,7 @@
 			</ol>
 		</div>
 	</div>
-	<h1 class="version">Stage 1 Draft / September 30, 2015</h1>
+	<h1 class="version">Stage 1 Draft / October 5, 2015</h1>
 	<h1 class="title">String.prototype.padLeft / padRight</h1>
 	<emu-clause id="String.prototype.padLeft">
 		<h1><span class="secnum">1</span>String.prototype.padLeft( maxLength [ , fillString ] )<span class="utils"><span class="anchor"><a href="#String.prototype.padLeft">#</a></span></span></h1>
@@ -36,16 +36,16 @@
 				<li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>O</var>).</li>
 				<li>Let <var>S</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>O</var>).</li>
 				<li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>S</var>).</li>
+				<li>Let <var>intMaxLength</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tolength">ToLength</a>(<var>maxLength</var>).</li>
+				<li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>intMaxLength</var>).</li>
 				<li>Let <var>stringLength</var> be the number of elements in S.</li>
+				<li>If <var>intMaxLength</var> is not greater than <var>stringLength</var>, return <var>S</var>.</li>
 				<li>If <var>fillString</var> is
 					<emu-val>undefined</emu-val>, let <var>fillStr</var> be the empty String.</li>
 				<li>Else, let <var>fillStr</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>fillString</var>).</li>
 				<li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>fillStr</var>).</li>
 				<li>If <var>fillStr</var> is the empty String, let <var>fillStr</var> be
 					<emu-val>" "</emu-val> (a string consisting of a single space).</li>
-				<li>Let <var>intMaxLength</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tolength">ToLength</a>(<var>maxLength</var>).</li>
-				<li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>intMaxLength</var>).</li>
-				<li>If <var>intMaxLength</var> is not greater than <var>stringLength</var>, return <var>S</var>.</li>
 				<li>Let <var>fillLen</var> be <var>intMaxLength</var> - <var>stringLength</var>.</li>
 				<li>Let <var>stringFiller</var> be the empty String.</li>
 				<li>Repeat, while the length of <var>stringFiller</var> is less than <var>fillLen</var>:
@@ -76,16 +76,16 @@
 				<li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>O</var>).</li>
 				<li>Let <var>S</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>O</var>).</li>
 				<li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>S</var>).</li>
+				<li>Let <var>intMaxLength</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tolength">ToLength</a>(<var>maxLength</var>).</li>
+				<li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>intMaxLength</var>).</li>
 				<li>Let <var>stringLength</var> be the number of elements in S.</li>
+				<li>If <var>intMaxLength</var> is not greater than <var>stringLength</var>, return <var>S</var>.</li>
 				<li>If <var>fillString</var> is
 					<emu-val>undefined</emu-val>, let <var>fillStr</var> be the empty String.</li>
 				<li>Else, let <var>fillStr</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>fillString</var>).</li>
 				<li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>fillStr</var>).</li>
 				<li>If <var>fillStr</var> is the empty String, let <var>fillStr</var> be
 					<emu-val>" "</emu-val> (a string consisting of a single space).</li>
-				<li>Let <var>intMaxLength</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tolength">ToLength</a>(<var>maxLength</var>).</li>
-				<li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>intMaxLength</var>).</li>
-				<li>If <var>intMaxLength</var> is not greater than <var>stringLength</var>, return <var>S</var>.</li>
 				<li>Let <var>fillLen</var> be <var>intMaxLength</var> - <var>stringLength</var>.</li>
 				<li>Let <var>stringFiller</var> be the empty String.</li>
 				<li>Repeat, while the length of <var>stringFiller</var> is less than <var>fillLen</var>:
