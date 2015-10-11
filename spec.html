@@ -19,15 +19,10 @@
 			</ol>
 		</div>
 	</div>
-	<h1 class="version">Stage 1 Draft / October 5, 2015</h1>
+	<h1 class="version">Stage 1 Draft / October 11, 2015</h1>
 	<h1 class="title">String.prototype.padLeft / padRight</h1>
 	<emu-clause id="String.prototype.padLeft">
 		<h1><span class="secnum">1</span>String.prototype.padLeft( maxLength [ , fillString ] )<span class="utils"><span class="anchor"><a href="#String.prototype.padLeft">#</a></span></span></h1>
-		<p>The first argument <var>maxLength</var> will be clamped such that it can be no smaller than the length of the
-			<emu-val>this</emu-val> value.</p>
-		<p>The optional second argument <var>fillString</var> defaults to
-			<emu-val>" "</emu-val> (a string consisting of a single space).</p>
-
 		<p>When the <code>padLeft</code> method is called, the following steps are taken:</p>
 		<emu-alg>
 			<ol>
@@ -57,17 +52,17 @@
 				</li>
 			</ol>
 		</emu-alg>
-		<emu-note><span class="note">Note</span>The <code>length</code> property of the <code>padLeft</code> method is
-			<emu-val>1</emu-val>.</emu-note>
+		<p>The <code>length</code> property of the <code>padLeft</code> method is
+			<emu-val>1</emu-val>.</p>
+		<emu-note><span class="note">Note 1</span>The first argument <var>maxLength</var> will be clamped such that it can be no smaller than the length of the
+			<emu-val>this</emu-val> value.</emu-note>
+		<emu-note><span class="note">Note 2</span>The optional second argument <var>fillString</var> defaults to
+			<emu-val>" "</emu-val> (a string consisting of a single space).</emu-note>
+
 	</emu-clause>
 
 	<emu-clause id="String.prototype.padRight">
 		<h1><span class="secnum">2</span>String.prototype.padRight( maxLength [ , fillString ] )<span class="utils"><span class="anchor"><a href="#String.prototype.padRight">#</a></span></span></h1>
-		<p>The first argument <var>maxLength</var> will be clamped such that it can be no smaller than the length of the
-			<emu-val>this</emu-val> value.</p>
-		<p>The optional second argument <var>fillString</var> defaults to
-			<emu-val>" "</emu-val> (a string consisting of a single space).</p>
-
 		<p>When the <code>padRight</code> method is called, the following steps are taken:</p>
 		<emu-alg>
 			<ol>
@@ -97,8 +92,12 @@
 				</li>
 			</ol>
 		</emu-alg>
-		<emu-note><span class="note">Note</span>The <code>length</code> property of the <code>padRight</code> method is
-			<emu-val>1</emu-val>.</emu-note>
+		<p>The <code>length</code> property of the <code>padRight</code> method is
+			<emu-val>1</emu-val>.</p>
+		<emu-note><span class="note">Note 1</span>The first argument <var>maxLength</var> will be clamped such that it can be no smaller than the length of the
+			<emu-val>this</emu-val> value.</emu-note>
+		<emu-note><span class="note">Note 2</span>The optional second argument <var>fillString</var> defaults to
+			<emu-val>" "</emu-val> (a string consisting of a single space).</emu-note>
 	</emu-clause>
 	<emu-annex id="sec-copyright-and-software-license">
 		<h1><span class="secnum">A</span>Copyright &amp; Software License<span class="utils"><span class="anchor"><a href="#sec-copyright-and-software-license">#</a></span></span></h1>
