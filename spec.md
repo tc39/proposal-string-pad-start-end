@@ -2,7 +2,6 @@
 
 When the _padLeft_ method is called, the following steps are taken:
   1. Let _O_ be RequireObjectCoercible(*this* value).
-  1. ReturnIfAbrupt(_O_).
   1. Let _S_ be ToString(_O_).
   1. ReturnIfAbrupt(_S_).
   1. Let _intMaxLength_ be ToLength(_maxLength_).
@@ -28,7 +27,6 @@ Note: The optional second argument _fillString_ defaults to *" "* (a string cons
 
 When the _padRight_ method is called, the following steps are taken:
   1. Let _O_ be RequireObjectCoercible(*this* value).
-  1. ReturnIfAbrupt(_O_).
   1. Let _S_ be ToString(_O_).
   1. ReturnIfAbrupt(_S_).
   1. Let _intMaxLength_ be ToLength(_maxLength_).

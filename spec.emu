@@ -13,7 +13,6 @@ contributors: Jordan Harband
 	<p>When the `padLeft` method is called, the following steps are taken:</p>
 	<emu-alg>
 		1. Let _O_ be RequireObjectCoercible(*this* value).
-		1. ReturnIfAbrupt(_O_).
 		1. Let _S_ be ToString(_O_).
 		1. ReturnIfAbrupt(_S_).
 		1. Let _intMaxLength_ be ToLength(_maxLength_).
@@ -41,7 +40,6 @@ contributors: Jordan Harband
 	<p>When the `padRight` method is called, the following steps are taken:</p>
 	<emu-alg>
 		1. Let _O_ be RequireObjectCoercible(*this* value).
-		1. ReturnIfAbrupt(_O_).
 		1. Let _S_ be ToString(_O_).
 		1. ReturnIfAbrupt(_S_).
 		1. Let _intMaxLength_ be ToLength(_maxLength_).
