@@ -27,7 +27,8 @@ contributors: Jordan Harband
 		1. Let _stringFiller_ be the empty String.
 		1. Repeat, while the length of _stringFiller_ is less than _fillLen_:
 			1. Let _stringFiller_ be a new String value computed by the concatenation of _stringFiller_ and _F_.
-		1. Return a new String value computed by the concatenation of the first _fillLen_ elements of _stringFiller_, and _S_.
+		1. Let _truncatedStringFiller_ be the first _fillLen_ elements of _stringFiller_.
+		1. Return a new String value computed by the concatenation of _truncatedStringFiller_ and _S_.
 	</emu-alg>
 	<p>The `length` property of the `padLeft` method is *1*.</p>
 	<emu-note>The first argument _maxLength_ will be clamped such that it can be no smaller than the length of the *this* value.</emu-note>
@@ -54,7 +55,8 @@ contributors: Jordan Harband
 		1. Let _stringFiller_ be the empty String.
 		1. Repeat, while the length of _stringFiller_ is less than _fillLen_:
 			1. Let _stringFiller_ be a new String value computed by the concatenation of _stringFiller_ and _F_.
-		1. Return a new String value computed by the concatenation of _S_, and the first _fillLen_ elements of _stringFiller_.
+		1. Let _truncatedStringFiller_ be the first _fillLen_ elements of _stringFiller_.
+		1. Return a new String value computed by the concatenation of _S_ and _truncatedStringFiller_.
 	</emu-alg>
 	<p>The `length` property of the `padRight` method is *1*.</p>
 	<emu-note>The first argument _maxLength_ will be clamped such that it can be no smaller than the length of the *this* value.</emu-note>

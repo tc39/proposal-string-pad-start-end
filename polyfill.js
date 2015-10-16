@@ -26,7 +26,8 @@ if (!String.prototype.padLeft) {
 		while (stringFiller.length < fillLen) {
 			stringFiller += F;
 		}
-		return stringFiller.slice(0, fillLen) + S;
+		const truncatedStringFiller = stringFiller.slice(0, fillLen);
+		return truncatedStringFiller + S;
 	};
 }
 
@@ -44,6 +45,7 @@ if (!String.prototype.padRight) {
 		while (stringFiller.length < fillLen) {
 			stringFiller += F;
 		}
-		return S + stringFiller.slice(0, fillLen);
+		const truncatedStringFiller = stringFiller.slice(0, fillLen);
+		return S + truncatedStringFiller;
 	};
 }
