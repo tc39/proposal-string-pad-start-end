@@ -11,7 +11,7 @@ When the _padLeft_ method is called, the following steps are taken:
   1. If _fillString_ is *undefined*, let _fillStr_ be the empty String.
   1. Else, let _fillStr_ be ToString(_fillString_).
   1. ReturnIfAbrupt(_fillStr_).
-  1. If _fillStr_ is the empty String, let _fillStr_ be *" "* (a string consisting of a single space).
+  1. If _fillStr_ is the empty String, let _fillStr_ be *" "* (a string consisting of U+0020 SPACE).
   1. Let _fillLen_ be _intMaxLength_ - _stringLength_.
   1. Let _stringFiller_ be the empty String.
   1. Repeat, while the length of _stringFiller_ is less than _fillLen_:
@@ -21,7 +21,7 @@ When the _padLeft_ method is called, the following steps are taken:
 The _length_ property of the _padLeft_ method is *1*.
 
 Note: the first argument _maxLength_ will be clamped such that it can be no smaller than the length of the *this* value.
-Note: The optional second argument _fillString_ defaults to *" "* (a string consisting of a single space).
+Note: The optional second argument _fillString_ defaults to *" "* (a string consisting of U+0020 SPACE).
 
 # String.prototype.padRight( maxLength [ , fillString ] )
 
@@ -36,7 +36,7 @@ When the _padRight_ method is called, the following steps are taken:
   1. If _fillString_ is *undefined*, let _fillStr_ be the empty String.
   1. Else, let _fillStr_ be ToString(_fillString_).
   1. ReturnIfAbrupt(_fillStr_).
-  1. If _fillStr_ is the empty String, let _fillStr_ be *" "* (a string consisting of a single space).
+  1. If _fillStr_ is the empty String, let _fillStr_ be *" "* (a string consisting of U+0020 SPACE).
   1. Let _fillLen_ be _intMaxLength_ - _stringLength_.
   1. Let _stringFiller_ be the empty String.
   1. Repeat, while the length of _stringFiller_ is less than _fillLen_:
@@ -46,4 +46,4 @@ When the _padRight_ method is called, the following steps are taken:
 The _length_ property of the _padRight_ method is *1*.
 
 Note: the first argument _maxLength_ will be clamped such that it can be no smaller than the length of the *this* value.
-Note: The optional second argument _fillString_ defaults to *" "* (a string consisting of a single space).
+Note: The optional second argument _fillString_ defaults to *" "* (a string consisting of U+0020 SPACE).
