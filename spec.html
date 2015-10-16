@@ -41,13 +41,12 @@
 				<li>If <var>F</var> is the empty String, let <var>F</var> be a string consisting of
 					<emu-val>" "</emu-val> (a string consisting of U+0020 SPACE).</li>
 				<li>Let <var>fillLen</var> be <var>intMaxLength</var> - <var>stringLength</var>.</li>
-				<li>Let <var>stringFiller</var> be the empty String.</li>
-				<li>Repeat, while the length of <var>stringFiller</var> is less than <var>fillLen</var>:
+				<li>Repeat, while the length of <var>F</var> is less than <var>fillLen</var>:
 					<ol>
-						<li>Let <var>stringFiller</var> be a new String value computed by the concatenation of <var>stringFiller</var> and <var>F</var>.</li>
+						<li>Let <var>F</var> be a new String value computed by the concatenation of <var>F</var> and <var>F</var>.</li>
 					</ol>
 				</li>
-				<li>Let <var>truncatedStringFiller</var> be the first <var>fillLen</var> elements of <var>stringFiller</var>.</li>
+				<li>Let <var>truncatedStringFiller</var> be the first <var>fillLen</var> elements of <var>F</var>.</li>
 				<li>Return a new String value computed by the concatenation of <var>truncatedStringFiller</var> and <var>S</var>.
 				</li>
 			</ol>
@@ -81,13 +80,12 @@
 				<li>If <var>F</var> is the empty String, let <var>F</var> be a string consisting of
 					<emu-val>" "</emu-val> (a string consisting of U+0020 SPACE).</li>
 				<li>Let <var>fillLen</var> be <var>intMaxLength</var> - <var>stringLength</var>.</li>
-				<li>Let <var>stringFiller</var> be the empty String.</li>
-				<li>Repeat, while the length of <var>stringFiller</var> is less than <var>fillLen</var>:
+				<li>Repeat, while the length of <var>F</var> is less than <var>fillLen</var>:
 					<ol>
-						<li>Let <var>stringFiller</var> be a new String value computed by the concatenation of <var>stringFiller</var> and <var>F</var>.</li>
+						<li>Let <var>F</var> be a new String value computed by the concatenation of <var>F</var> and <var>F</var>.</li>
 					</ol>
 				</li>
-				<li>Let <var>truncatedStringFiller</var> be the first <var>fillLen</var> elements of <var>stringFiller</var>.</li>
+				<li>Let <var>truncatedStringFiller</var> be the first <var>fillLen</var> elements of <var>F</var>.</li>
 				<li>Return a new String value computed by the concatenation of <var>S</var> and <var>truncatedStringFiller</var>.
 				</li>
 			</ol>
