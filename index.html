@@ -19,7 +19,7 @@
 			</ol>
 		</div>
 	</div>
-	<h1 class="version">Stage 1 Draft / October 13, 2015</h1>
+	<h1 class="version">Stage 1 Draft / October 16, 2015</h1>
 	<h1 class="title">String.prototype.padLeft / padRight</h1>
 	<emu-clause id="String.prototype.padLeft">
 		<h1><span class="secnum">1</span>String.prototype.padLeft( maxLength [ , fillString ] )<span class="utils"><span class="anchor"><a href="#String.prototype.padLeft">#</a></span></span></h1>
@@ -35,19 +35,19 @@
 				<li>Let <var>stringLength</var> be the number of elements in S.</li>
 				<li>If <var>intMaxLength</var> is not greater than <var>stringLength</var>, return <var>S</var>.</li>
 				<li>If <var>fillString</var> is
-					<emu-val>undefined</emu-val>, let <var>fillStr</var> be the empty String.</li>
-				<li>Else, let <var>fillStr</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>fillString</var>).</li>
-				<li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>fillStr</var>).</li>
-				<li>If <var>fillStr</var> is the empty String, let <var>fillStr</var> be
-					<emu-val>" "</emu-val> (a string consisting of a single space).</li>
+					<emu-val>undefined</emu-val>, let <var>F</var> be the empty String.</li>
+				<li>Else, let <var>F</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>fillString</var>).</li>
+				<li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>F</var>).</li>
+				<li>If <var>F</var> is the empty String, let <var>F</var> be a string consisting of
+					<emu-val>" "</emu-val> (a string consisting of U+0020 SPACE).</li>
 				<li>Let <var>fillLen</var> be <var>intMaxLength</var> - <var>stringLength</var>.</li>
-				<li>Let <var>stringFiller</var> be the empty String.</li>
-				<li>Repeat, while the length of <var>stringFiller</var> is less than <var>fillLen</var>:
+				<li>Repeat, while the length of <var>F</var> is less than <var>fillLen</var>:
 					<ol>
-						<li>Let <var>stringFiller</var> be a new String value computed by the concatenation of <var>stringFiller</var> and <var>fillStr</var>.</li>
+						<li>Let <var>F</var> be a new String value computed by the concatenation of <var>F</var> and <var>F</var>.</li>
 					</ol>
 				</li>
-				<li>Return a new String value computed by the concatenation of the first <var>fillLen</var> elements of <var>stringFiller</var>, and <var>S</var>.
+				<li>Let <var>truncatedStringFiller</var> be the first <var>fillLen</var> elements of <var>F</var>.</li>
+				<li>Return a new String value computed by the concatenation of <var>truncatedStringFiller</var> and <var>S</var>.
 				</li>
 			</ol>
 		</emu-alg>
@@ -56,7 +56,7 @@
 		<emu-note><span class="note">Note 1</span>The first argument <var>maxLength</var> will be clamped such that it can be no smaller than the length of the
 			<emu-val>this</emu-val> value.</emu-note>
 		<emu-note><span class="note">Note 2</span>The optional second argument <var>fillString</var> defaults to
-			<emu-val>" "</emu-val> (a string consisting of a single space).</emu-note>
+			<emu-val>" "</emu-val> (a string consisting of U+0020 SPACE).</emu-note>
 
 	</emu-clause>
 
@@ -74,19 +74,19 @@
 				<li>Let <var>stringLength</var> be the number of elements in S.</li>
 				<li>If <var>intMaxLength</var> is not greater than <var>stringLength</var>, return <var>S</var>.</li>
 				<li>If <var>fillString</var> is
-					<emu-val>undefined</emu-val>, let <var>fillStr</var> be the empty String.</li>
-				<li>Else, let <var>fillStr</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>fillString</var>).</li>
-				<li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>fillStr</var>).</li>
-				<li>If <var>fillStr</var> is the empty String, let <var>fillStr</var> be
-					<emu-val>" "</emu-val> (a string consisting of a single space).</li>
+					<emu-val>undefined</emu-val>, let <var>F</var> be the empty String.</li>
+				<li>Else, let <var>F</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>fillString</var>).</li>
+				<li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>F</var>).</li>
+				<li>If <var>F</var> is the empty String, let <var>F</var> be a string consisting of
+					<emu-val>" "</emu-val> (a string consisting of U+0020 SPACE).</li>
 				<li>Let <var>fillLen</var> be <var>intMaxLength</var> - <var>stringLength</var>.</li>
-				<li>Let <var>stringFiller</var> be the empty String.</li>
-				<li>Repeat, while the length of <var>stringFiller</var> is less than <var>fillLen</var>:
+				<li>Repeat, while the length of <var>F</var> is less than <var>fillLen</var>:
 					<ol>
-						<li>Let <var>stringFiller</var> be a new String value computed by the concatenation of <var>stringFiller</var> and <var>fillStr</var>.</li>
+						<li>Let <var>F</var> be a new String value computed by the concatenation of <var>F</var> and <var>F</var>.</li>
 					</ol>
 				</li>
-				<li>Return a new String value computed by the concatenation of <var>S</var>, and the first <var>fillLen</var> elements of <var>stringFiller</var>.
+				<li>Let <var>truncatedStringFiller</var> be the first <var>fillLen</var> elements of <var>F</var>.</li>
+				<li>Return a new String value computed by the concatenation of <var>S</var> and <var>truncatedStringFiller</var>.
 				</li>
 			</ol>
 		</emu-alg>
@@ -95,7 +95,7 @@
 		<emu-note><span class="note">Note 1</span>The first argument <var>maxLength</var> will be clamped such that it can be no smaller than the length of the
 			<emu-val>this</emu-val> value.</emu-note>
 		<emu-note><span class="note">Note 2</span>The optional second argument <var>fillString</var> defaults to
-			<emu-val>" "</emu-val> (a string consisting of a single space).</emu-note>
+			<emu-val>" "</emu-val> (a string consisting of U+0020 SPACE).</emu-note>
 	</emu-clause>
 	<emu-annex id="sec-copyright-and-software-license">
 		<h1><span class="secnum">A</span>Copyright &amp; Software License<span class="utils"><span class="anchor"><a href="#sec-copyright-and-software-license">#</a></span></span></h1>
