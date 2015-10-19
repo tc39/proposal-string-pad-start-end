@@ -19,7 +19,7 @@
 			</ol>
 		</div>
 	</div>
-	<h1 class="version">Stage 1 Draft / October 16, 2015</h1>
+	<h1 class="version">Stage 1 Draft / October 19, 2015</h1>
 	<h1 class="title">String.prototype.padLeft / padRight</h1>
 	<emu-clause id="String.prototype.padLeft">
 		<h1><span class="secnum">1</span>String.prototype.padLeft( maxLength [ , fillString ] )<span class="utils"><span class="anchor"><a href="#String.prototype.padLeft">#</a></span></span></h1>
@@ -43,7 +43,19 @@
 				<li>Let <var>fillLen</var> be <var>intMaxLength</var> - <var>stringLength</var>.</li>
 				<li>Repeat, while the length of <var>F</var> is less than <var>fillLen</var>:
 					<ol>
-						<li>Let <var>F</var> be a new String value computed by the concatenation of <var>F</var> and <var>F</var>.</li>
+						<li>Let <var>fLen</var> be the length of <var>F</var>.</li>
+						<li>Let <var>remainingCodeUnits</var> be <var>fillLen</var> - <var>fLen</var>.</li>
+						<li>If <var>fLen</var> is greater than <var>remainingCodeUnits</var>, then
+							<ol>
+								<li>Let <var>truncatedF</var> be the first <var>remainingCodeUnits</var> of <var>F</var>.</li>
+								<li>Let <var>F</var> be a new String computed by the concatenation of <var>F</var> and <var>truncatedF</var>.</li>
+							</ol>
+						</li>
+						<li>Else,
+							<ol>
+								<li>Let <var>F</var> be a new String value computed by the concatenation of <var>F</var> and <var>F</var>.</li>
+							</ol>
+						</li>
 					</ol>
 				</li>
 				<li>Let <var>truncatedStringFiller</var> be the first <var>fillLen</var> elements of <var>F</var>.</li>
@@ -82,7 +94,19 @@
 				<li>Let <var>fillLen</var> be <var>intMaxLength</var> - <var>stringLength</var>.</li>
 				<li>Repeat, while the length of <var>F</var> is less than <var>fillLen</var>:
 					<ol>
-						<li>Let <var>F</var> be a new String value computed by the concatenation of <var>F</var> and <var>F</var>.</li>
+						<li>Let <var>fLen</var> be the length of <var>F</var>.</li>
+						<li>Let <var>remainingCodeUnits</var> be <var>fillLen</var> - <var>fLen</var>.</li>
+						<li>If <var>fLen</var> is greater than <var>remainingCodeUnits</var>, then
+							<ol>
+								<li>Let <var>truncatedF</var> be the first <var>remainingCodeUnits</var> of <var>F</var>.</li>
+								<li>Let <var>F</var> be a new String computed by the concatenation of <var>F</var> and <var>truncatedF</var>.</li>
+							</ol>
+						</li>
+						<li>Else,
+							<ol>
+								<li>Let <var>F</var> be a new String value computed by the concatenation of <var>F</var> and <var>F</var>.</li>
+							</ol>
+						</li>
 					</ol>
 				</li>
 				<li>Let <var>truncatedStringFiller</var> be the first <var>fillLen</var> elements of <var>F</var>.</li>

@@ -23,7 +23,13 @@ if (!String.prototype.padLeft) {
 		if (F === '') { F = ' '; }
 		const fillLen = intMaxLength - stringLength;
 		while (F.length < fillLen) {
-			F += F;
+			const fLen = F.length;
+			const remainingCodeUnits = fillLen - fLen;
+			if (fLen > remainingCodeUnits) {
+				F += F.slice(0, remainingCodeUnits);
+			} else {
+				F += F;
+			}
 		}
 		const truncatedStringFiller = F.slice(0, fillLen);
 		return truncatedStringFiller + S;
@@ -41,7 +47,13 @@ if (!String.prototype.padRight) {
 		if (F === '') { F = ' '; }
 		const fillLen = intMaxLength - stringLength;
 		while (F.length < fillLen) {
-			F += F;
+			const fLen = F.length;
+			const remainingCodeUnits = fillLen - fLen;
+			if (fLen > remainingCodeUnits) {
+				F += F.slice(0, remainingCodeUnits);
+			} else {
+				F += F;
+			}
 		}
 		const truncatedStringFiller = F.slice(0, fillLen);
 		return S + truncatedStringFiller;
