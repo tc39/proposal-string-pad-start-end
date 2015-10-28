@@ -13,15 +13,7 @@ When the _padLeft_ method is called, the following steps are taken:
   1. ReturnIfAbrupt(_filler_).
   1. If _filler_ is the empty String, let _filler_ be a string consisting solely of the code unit U+0020 (SPACE).
   1. Let _fillLen_ be _intMaxLength_ - _stringLength_.
-  1. Repeat, while the length of _filler_ is less than _fillLen_
-    1. Let _fLen_ be the length of _filler_.
-    1. Let _remainingCodeUnits_ be _fillLen_ - _fLen_.
-    1. If _fLen_ is greater than _remainingCodeUnits_, then
-      1. Let _truncatedF_ be the first _remainingCodeUnits_ of _filler_.
-      1. Let _filler_ be a new String computed by the concatenation of _filler_ and _truncatedF_.
-    1. Else,
-      1. Let _filler_ be a new String value computed by the concatenation of _filler_ and _filler_.
-  1. Let _truncatedStringFiller_ be the first _fillLen_ elements of _filler_.
+  1. Let _truncatedStringFiller_ be a new String value consisting of repeated concatenations of _filler_ truncated to length _fillLen_.
   1. Return a new String value computed by the concatenation of _truncatedStringFiller_ and _S_.
 
 Note: the first argument _maxLength_ will be clamped such that it can be no smaller than the length of the *this* value.
@@ -42,15 +34,7 @@ When the _padRight_ method is called, the following steps are taken:
   1. ReturnIfAbrupt(_filler_).
   1. If _filler_ is the empty String, let _filler_ be a string consisting solely of the code unit U+0020 (SPACE).
   1. Let _fillLen_ be _intMaxLength_ - _stringLength_.
-  1. Repeat, while the length of _filler_ is less than _fillLen_
-    1. Let _fLen_ be the length of _filler_.
-    1. Let _remainingCodeUnits_ be _fillLen_ - _fLen_.
-    1. If _fLen_ is greater than _remainingCodeUnits_, then
-      1. Let _truncatedF_ be the first _remainingCodeUnits_ of _filler_.
-      1. Let _filler_ be a new String computed by the concatenation of _filler_ and _truncatedF_.
-    1. Else,
-      1. Let _filler_ be a new String value computed by the concatenation of _filler_ and _filler_.
-  1. Let _truncatedStringFiller_ be the first _fillLen_ elements of _filler_.
+  1. Let _truncatedStringFiller_ be a new String value consisting of repeated concatenations of _filler_ truncated to length _fillLen_.
   1. Return a new String value computed by the concatenation of _S_ and _truncatedStringFiller_.
 
 Note: the first argument _maxLength_ will be clamped such that it can be no smaller than the length of the *this* value.
