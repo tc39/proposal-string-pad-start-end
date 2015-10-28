@@ -19,19 +19,19 @@ if (!String.prototype.padLeft) {
 		const intMaxLength = ToLength(maxLength);
 		const stringLength = ToLength(S.length);
 		if (intMaxLength <= stringLength) { return S; }
-		let F = typeof fillString === 'undefined' ? '' : String(fillString);
-		if (F === '') { F = ' '; }
+		let filler = typeof fillString === 'undefined' ? '' : String(fillString);
+		if (filler === '') { filler = ' '; }
 		const fillLen = intMaxLength - stringLength;
-		while (F.length < fillLen) {
-			const fLen = F.length;
+		while (filler.length < fillLen) {
+			const fLen = filler.length;
 			const remainingCodeUnits = fillLen - fLen;
 			if (fLen > remainingCodeUnits) {
-				F += F.slice(0, remainingCodeUnits);
+				filler += filler.slice(0, remainingCodeUnits);
 			} else {
-				F += F;
+				filler += filler;
 			}
 		}
-		const truncatedStringFiller = F.slice(0, fillLen);
+		const truncatedStringFiller = filler.slice(0, fillLen);
 		return truncatedStringFiller + S;
 	};
 }
@@ -43,19 +43,19 @@ if (!String.prototype.padRight) {
 		const intMaxLength = ToLength(maxLength);
 		const stringLength = ToLength(S.length);
 		if (intMaxLength <= stringLength) { return S; }
-		let F = typeof fillString === 'undefined' ? '' : String(fillString);
-		if (F === '') { F = ' '; }
+		let filler = typeof fillString === 'undefined' ? '' : String(fillString);
+		if (filler === '') { filler = ' '; }
 		const fillLen = intMaxLength - stringLength;
-		while (F.length < fillLen) {
-			const fLen = F.length;
+		while (filler.length < fillLen) {
+			const fLen = filler.length;
 			const remainingCodeUnits = fillLen - fLen;
 			if (fLen > remainingCodeUnits) {
-				F += F.slice(0, remainingCodeUnits);
+				filler += filler.slice(0, remainingCodeUnits);
 			} else {
-				F += F;
+				filler += filler;
 			}
 		}
-		const truncatedStringFiller = F.slice(0, fillLen);
+		const truncatedStringFiller = filler.slice(0, fillLen);
 		return S + truncatedStringFiller;
 	};
 }

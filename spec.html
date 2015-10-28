@@ -40,35 +40,33 @@
 				<li>Let <var>stringLength</var> be the number of elements in S.</li>
 				<li>If <var>intMaxLength</var> is not greater than <var>stringLength</var>, return <var>S</var>.</li>
 				<li>If <var>fillString</var> is
-					<emu-val>undefined</emu-val>, let <var>F</var> be the empty String.</li>
-				<li>Else, let <var>F</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>fillString</var>).</li>
-				<li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>F</var>).</li>
-				<li>If <var>F</var> is the empty String, let <var>F</var> be a string consisting solely of the code unit U+0020 (SPACE).</li>
+					<emu-val>undefined</emu-val>, let <var>filler</var> be the empty String.</li>
+				<li>Else, let <var>filler</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>fillString</var>).</li>
+				<li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>filler</var>).</li>
+				<li>If <var>filler</var> is the empty String, let <var>filler</var> be a string consisting solely of the code unit U+0020 (SPACE).</li>
 				<li>Let <var>fillLen</var> be <var>intMaxLength</var> - <var>stringLength</var>.</li>
-				<li>Repeat, while the length of <var>F</var> is less than <var>fillLen</var>:
+				<li>Repeat, while the length of <var>filler</var> is less than <var>fillLen</var>
 					<ol>
-						<li>Let <var>fLen</var> be the length of <var>F</var>.</li>
+						<li>Let <var>fLen</var> be the length of <var>filler</var>.</li>
 						<li>Let <var>remainingCodeUnits</var> be <var>fillLen</var> - <var>fLen</var>.</li>
 						<li>If <var>fLen</var> is greater than <var>remainingCodeUnits</var>, then
 							<ol>
-								<li>Let <var>truncatedF</var> be the first <var>remainingCodeUnits</var> of <var>F</var>.</li>
-								<li>Let <var>F</var> be a new String computed by the concatenation of <var>F</var> and <var>truncatedF</var>.</li>
+								<li>Let <var>truncatedF</var> be the first <var>remainingCodeUnits</var> of <var>filler</var>.</li>
+								<li>Let <var>filler</var> be a new String computed by the concatenation of <var>filler</var> and <var>truncatedF</var>.</li>
 							</ol>
 						</li>
 						<li>Else,
 							<ol>
-								<li>Let <var>F</var> be a new String value computed by the concatenation of <var>F</var> and <var>F</var>.</li>
+								<li>Let <var>filler</var> be a new String value computed by the concatenation of <var>filler</var> and <var>filler</var>.</li>
 							</ol>
 						</li>
 					</ol>
 				</li>
-				<li>Let <var>truncatedStringFiller</var> be the first <var>fillLen</var> elements of <var>F</var>.</li>
+				<li>Let <var>truncatedStringFiller</var> be the first <var>fillLen</var> elements of <var>filler</var>.</li>
 				<li>Return a new String value computed by the concatenation of <var>truncatedStringFiller</var> and <var>S</var>.
 				</li>
 			</ol>
 		</emu-alg>
-		<p>The <code>length</code> property of the <code>padLeft</code> method is
-			<emu-val>1</emu-val>.</p>
 		<emu-note><span class="note">Note 1</span>The first argument <var>maxLength</var> will be clamped such that it can be no smaller than the length of the
 			<emu-val>this</emu-val> value.</emu-note>
 		<emu-note><span class="note">Note 2</span>The optional second argument <var>fillString</var> defaults to
@@ -90,35 +88,33 @@
 				<li>Let <var>stringLength</var> be the number of elements in S.</li>
 				<li>If <var>intMaxLength</var> is not greater than <var>stringLength</var>, return <var>S</var>.</li>
 				<li>If <var>fillString</var> is
-					<emu-val>undefined</emu-val>, let <var>F</var> be the empty String.</li>
-				<li>Else, let <var>F</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>fillString</var>).</li>
-				<li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>F</var>).</li>
-				<li>If <var>F</var> is the empty String, let <var>F</var> be a string consisting solely of the code unit U+0020 (SPACE).</li>
+					<emu-val>undefined</emu-val>, let <var>filler</var> be the empty String.</li>
+				<li>Else, let <var>filler</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>fillString</var>).</li>
+				<li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>filler</var>).</li>
+				<li>If <var>filler</var> is the empty String, let <var>filler</var> be a string consisting solely of the code unit U+0020 (SPACE).</li>
 				<li>Let <var>fillLen</var> be <var>intMaxLength</var> - <var>stringLength</var>.</li>
-				<li>Repeat, while the length of <var>F</var> is less than <var>fillLen</var>:
+				<li>Repeat, while the length of <var>filler</var> is less than <var>fillLen</var>
 					<ol>
-						<li>Let <var>fLen</var> be the length of <var>F</var>.</li>
+						<li>Let <var>fLen</var> be the length of <var>filler</var>.</li>
 						<li>Let <var>remainingCodeUnits</var> be <var>fillLen</var> - <var>fLen</var>.</li>
 						<li>If <var>fLen</var> is greater than <var>remainingCodeUnits</var>, then
 							<ol>
-								<li>Let <var>truncatedF</var> be the first <var>remainingCodeUnits</var> of <var>F</var>.</li>
-								<li>Let <var>F</var> be a new String computed by the concatenation of <var>F</var> and <var>truncatedF</var>.</li>
+								<li>Let <var>truncatedF</var> be the first <var>remainingCodeUnits</var> of <var>filler</var>.</li>
+								<li>Let <var>filler</var> be a new String computed by the concatenation of <var>filler</var> and <var>truncatedF</var>.</li>
 							</ol>
 						</li>
 						<li>Else,
 							<ol>
-								<li>Let <var>F</var> be a new String value computed by the concatenation of <var>F</var> and <var>F</var>.</li>
+								<li>Let <var>filler</var> be a new String value computed by the concatenation of <var>filler</var> and <var>filler</var>.</li>
 							</ol>
 						</li>
 					</ol>
 				</li>
-				<li>Let <var>truncatedStringFiller</var> be the first <var>fillLen</var> elements of <var>F</var>.</li>
+				<li>Let <var>truncatedStringFiller</var> be the first <var>fillLen</var> elements of <var>filler</var>.</li>
 				<li>Return a new String value computed by the concatenation of <var>S</var> and <var>truncatedStringFiller</var>.
 				</li>
 			</ol>
 		</emu-alg>
-		<p>The <code>length</code> property of the <code>padRight</code> method is
-			<emu-val>1</emu-val>.</p>
 		<emu-note><span class="note">Note 1</span>The first argument <var>maxLength</var> will be clamped such that it can be no smaller than the length of the
 			<emu-val>this</emu-val> value.</emu-note>
 		<emu-note><span class="note">Note 2</span>The optional second argument <var>fillString</var> defaults to
