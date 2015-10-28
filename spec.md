@@ -11,7 +11,7 @@ When the _padLeft_ method is called, the following steps are taken:
   1. If _fillString_ is *undefined*, let _F_ be the empty String.
   1. Else, let _F_ be ToString(_fillString_).
   1. ReturnIfAbrupt(_F_).
-  1. If _F_ is the empty String, let _F_ be *" "* (a string consisting of U+0020 SPACE).
+  1. If _F_ is the empty String, let _F_ be a string consisting solely of the code unit U+0020 (SPACE).
   1. Let _fillLen_ be _intMaxLength_ - _stringLength_.
   1. Repeat, while the length of _F_ is less than _fillLen_:
     1. Let _fLen_ be the length of _F_.
@@ -42,7 +42,7 @@ When the _padRight_ method is called, the following steps are taken:
   1. If _fillString_ is *undefined*, let _F_ be the empty String.
   1. Else, let _F_ be ToString(_fillString_).
   1. ReturnIfAbrupt(_F_).
-  1. If _F_ is the empty String, let _F_ be *" "* (a string consisting of U+0020 SPACE).
+  1. If _F_ is the empty String, let _F_ be a string consisting solely of the code unit U+0020 (SPACE).
   1. Let _fillLen_ be _intMaxLength_ - _stringLength_.
   1. Repeat, while the length of _F_ is less than _fillLen_:
     1. Let _fLen_ be the length of _F_.
