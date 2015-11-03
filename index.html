@@ -6,11 +6,16 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
 	<script src="./spec.js"></script>
 	<title>String.prototype.padLeft / padRight</title>
+	<script type="application/json" id="menu-search-biblio">{"clauses":{"String.prototype.padLeft":{"location":"","id":"String.prototype.padLeft","aoid":null,"title":"String.prototype.padLeft( maxLength [ , fillString ] )","number":"1"},"String.prototype.padRight":{"location":"","id":"String.prototype.padRight","aoid":null,"title":"String.prototype.padRight( maxLength [ , fillString ] )","number":"2"},"sec-copyright-and-software-license":{"location":"","id":"sec-copyright-and-software-license","aoid":null,"title":"Copyright & Software License","number":"A"}},"ops":{},"productions":{},"terms":{},"examples":{},"notes":{},"tables":{},"figures":{}}</script>
 </head>
 
 <body>
 	<div id="menu-toggle">☰</div>
 	<div id="menu">
+		<div id="menu-search">
+			<input type="text" id="menu-search-box" placeholder="Search...">
+			<div id="menu-search-results" class="inactive"></div>
+		</div>
 		<div id="menu-toc">
 			<ol class="toc">
 				<li><span class="item-toggle-none"></span><a href="#String.prototype.padLeft" title="String.prototype.padLeft( maxLength [ , fillString ] )"><span class="secnum">1</span> String.prototype.padLeft( maxLength [ , fillString ] )</a></li>
@@ -19,52 +24,29 @@
 			</ol>
 		</div>
 	</div>
-	<h1 class="version">Stage 1 Draft / October 19, 2015</h1>
+	<h1 class="version">Stage 1 Draft / November 3, 2015</h1>
 	<h1 class="title">String.prototype.padLeft / padRight</h1>
 	<emu-clause id="String.prototype.padLeft">
 		<h1><span class="secnum">1</span>String.prototype.padLeft( maxLength [ , fillString ] )<span class="utils"><span class="anchor"><a href="#String.prototype.padLeft">#</a></span></span></h1>
 		<p>When the <code>padLeft</code> method is called, the following steps are taken:</p>
 		<emu-alg>
 			<ol>
-				<li>Let <var>O</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-requireobjectcoercible">RequireObjectCoercible</a>(
+				<li>Let <var>O</var> be ? <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-requireobjectcoercible">RequireObjectCoercible</a>(
 					<emu-val>this</emu-val> value).</li>
-				<li>Let <var>S</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>O</var>).</li>
-				<li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>S</var>).</li>
-				<li>Let <var>intMaxLength</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tolength">ToLength</a>(<var>maxLength</var>).</li>
-				<li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>intMaxLength</var>).</li>
+				<li>Let <var>S</var> be ? <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>O</var>).</li>
+				<li>Let <var>intMaxLength</var> be ? <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tolength">ToLength</a>(<var>maxLength</var>).</li>
 				<li>Let <var>stringLength</var> be the number of elements in S.</li>
 				<li>If <var>intMaxLength</var> is not greater than <var>stringLength</var>, return <var>S</var>.</li>
 				<li>If <var>fillString</var> is
-					<emu-val>undefined</emu-val>, let <var>F</var> be the empty String.</li>
-				<li>Else, let <var>F</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>fillString</var>).</li>
-				<li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>F</var>).</li>
-				<li>If <var>F</var> is the empty String, let <var>F</var> be a string consisting of
-					<emu-val>" "</emu-val> (a string consisting of U+0020 SPACE).</li>
+					<emu-val>undefined</emu-val>, let <var>filler</var> be the empty String.</li>
+				<li>Else, let <var>filler</var> be ? <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>fillString</var>).</li>
+				<li>If <var>filler</var> is the empty String, let <var>filler</var> be a string consisting solely of the code unit U+0020 (SPACE).</li>
 				<li>Let <var>fillLen</var> be <var>intMaxLength</var> - <var>stringLength</var>.</li>
-				<li>Repeat, while the length of <var>F</var> is less than <var>fillLen</var>:
-					<ol>
-						<li>Let <var>fLen</var> be the length of <var>F</var>.</li>
-						<li>Let <var>remainingCodeUnits</var> be <var>fillLen</var> - <var>fLen</var>.</li>
-						<li>If <var>fLen</var> is greater than <var>remainingCodeUnits</var>, then
-							<ol>
-								<li>Let <var>truncatedF</var> be the first <var>remainingCodeUnits</var> of <var>F</var>.</li>
-								<li>Let <var>F</var> be a new String computed by the concatenation of <var>F</var> and <var>truncatedF</var>.</li>
-							</ol>
-						</li>
-						<li>Else,
-							<ol>
-								<li>Let <var>F</var> be a new String value computed by the concatenation of <var>F</var> and <var>F</var>.</li>
-							</ol>
-						</li>
-					</ol>
-				</li>
-				<li>Let <var>truncatedStringFiller</var> be the first <var>fillLen</var> elements of <var>F</var>.</li>
+				<li>Let <var>truncatedStringFiller</var> be a new String value consisting of repeated concatenations of <var>filler</var> truncated to length <var>fillLen</var>.</li>
 				<li>Return a new String value computed by the concatenation of <var>truncatedStringFiller</var> and <var>S</var>.
 				</li>
 			</ol>
 		</emu-alg>
-		<p>The <code>length</code> property of the <code>padLeft</code> method is
-			<emu-val>1</emu-val>.</p>
 		<emu-note><span class="note">Note 1</span>The first argument <var>maxLength</var> will be clamped such that it can be no smaller than the length of the
 			<emu-val>this</emu-val> value.</emu-note>
 		<emu-note><span class="note">Note 2</span>The optional second argument <var>fillString</var> defaults to
@@ -77,45 +59,22 @@
 		<p>When the <code>padRight</code> method is called, the following steps are taken:</p>
 		<emu-alg>
 			<ol>
-				<li>Let <var>O</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-requireobjectcoercible">RequireObjectCoercible</a>(
+				<li>Let <var>O</var> be ? <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-requireobjectcoercible">RequireObjectCoercible</a>(
 					<emu-val>this</emu-val> value).</li>
-				<li>Let <var>S</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>O</var>).</li>
-				<li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>S</var>).</li>
-				<li>Let <var>intMaxLength</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tolength">ToLength</a>(<var>maxLength</var>).</li>
-				<li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>intMaxLength</var>).</li>
+				<li>Let <var>S</var> be ? <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>O</var>).</li>
+				<li>Let <var>intMaxLength</var> be ? <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tolength">ToLength</a>(<var>maxLength</var>).</li>
 				<li>Let <var>stringLength</var> be the number of elements in S.</li>
 				<li>If <var>intMaxLength</var> is not greater than <var>stringLength</var>, return <var>S</var>.</li>
 				<li>If <var>fillString</var> is
-					<emu-val>undefined</emu-val>, let <var>F</var> be the empty String.</li>
-				<li>Else, let <var>F</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>fillString</var>).</li>
-				<li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>F</var>).</li>
-				<li>If <var>F</var> is the empty String, let <var>F</var> be a string consisting of
-					<emu-val>" "</emu-val> (a string consisting of U+0020 SPACE).</li>
+					<emu-val>undefined</emu-val>, let <var>filler</var> be the empty String.</li>
+				<li>Else, let <var>filler</var> be ? <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>fillString</var>).</li>
+				<li>If <var>filler</var> is the empty String, let <var>filler</var> be a string consisting solely of the code unit U+0020 (SPACE).</li>
 				<li>Let <var>fillLen</var> be <var>intMaxLength</var> - <var>stringLength</var>.</li>
-				<li>Repeat, while the length of <var>F</var> is less than <var>fillLen</var>:
-					<ol>
-						<li>Let <var>fLen</var> be the length of <var>F</var>.</li>
-						<li>Let <var>remainingCodeUnits</var> be <var>fillLen</var> - <var>fLen</var>.</li>
-						<li>If <var>fLen</var> is greater than <var>remainingCodeUnits</var>, then
-							<ol>
-								<li>Let <var>truncatedF</var> be the first <var>remainingCodeUnits</var> of <var>F</var>.</li>
-								<li>Let <var>F</var> be a new String computed by the concatenation of <var>F</var> and <var>truncatedF</var>.</li>
-							</ol>
-						</li>
-						<li>Else,
-							<ol>
-								<li>Let <var>F</var> be a new String value computed by the concatenation of <var>F</var> and <var>F</var>.</li>
-							</ol>
-						</li>
-					</ol>
-				</li>
-				<li>Let <var>truncatedStringFiller</var> be the first <var>fillLen</var> elements of <var>F</var>.</li>
+				<li>Let <var>truncatedStringFiller</var> be a new String value consisting of repeated concatenations of <var>filler</var> truncated to length <var>fillLen</var>.</li>
 				<li>Return a new String value computed by the concatenation of <var>S</var> and <var>truncatedStringFiller</var>.
 				</li>
 			</ol>
 		</emu-alg>
-		<p>The <code>length</code> property of the <code>padRight</code> method is
-			<emu-val>1</emu-val>.</p>
 		<emu-note><span class="note">Note 1</span>The first argument <var>maxLength</var> will be clamped such that it can be no smaller than the length of the
 			<emu-val>this</emu-val> value.</emu-note>
 		<emu-note><span class="note">Note 2</span>The optional second argument <var>fillString</var> defaults to
