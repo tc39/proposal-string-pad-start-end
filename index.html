@@ -24,25 +24,22 @@
 			</ol>
 		</div>
 	</div>
-	<h1 class="version">Stage 1 Draft / October 28, 2015</h1>
+	<h1 class="version">Stage 1 Draft / November 3, 2015</h1>
 	<h1 class="title">String.prototype.padLeft / padRight</h1>
 	<emu-clause id="String.prototype.padLeft">
 		<h1><span class="secnum">1</span>String.prototype.padLeft( maxLength [ , fillString ] )<span class="utils"><span class="anchor"><a href="#String.prototype.padLeft">#</a></span></span></h1>
 		<p>When the <code>padLeft</code> method is called, the following steps are taken:</p>
 		<emu-alg>
 			<ol>
-				<li>Let <var>O</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-requireobjectcoercible">RequireObjectCoercible</a>(
+				<li>Let <var>O</var> be ? <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-requireobjectcoercible">RequireObjectCoercible</a>(
 					<emu-val>this</emu-val> value).</li>
-				<li>Let <var>S</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>O</var>).</li>
-				<li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>S</var>).</li>
-				<li>Let <var>intMaxLength</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tolength">ToLength</a>(<var>maxLength</var>).</li>
-				<li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>intMaxLength</var>).</li>
+				<li>Let <var>S</var> be ? <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>O</var>).</li>
+				<li>Let <var>intMaxLength</var> be ? <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tolength">ToLength</a>(<var>maxLength</var>).</li>
 				<li>Let <var>stringLength</var> be the number of elements in S.</li>
 				<li>If <var>intMaxLength</var> is not greater than <var>stringLength</var>, return <var>S</var>.</li>
 				<li>If <var>fillString</var> is
 					<emu-val>undefined</emu-val>, let <var>filler</var> be the empty String.</li>
-				<li>Else, let <var>filler</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>fillString</var>).</li>
-				<li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>filler</var>).</li>
+				<li>Else, let <var>filler</var> be ? <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>fillString</var>).</li>
 				<li>If <var>filler</var> is the empty String, let <var>filler</var> be a string consisting solely of the code unit U+0020 (SPACE).</li>
 				<li>Let <var>fillLen</var> be <var>intMaxLength</var> - <var>stringLength</var>.</li>
 				<li>Let <var>truncatedStringFiller</var> be a new String value consisting of repeated concatenations of <var>filler</var> truncated to length <var>fillLen</var>.</li>
@@ -62,18 +59,15 @@
 		<p>When the <code>padRight</code> method is called, the following steps are taken:</p>
 		<emu-alg>
 			<ol>
-				<li>Let <var>O</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-requireobjectcoercible">RequireObjectCoercible</a>(
+				<li>Let <var>O</var> be ? <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-requireobjectcoercible">RequireObjectCoercible</a>(
 					<emu-val>this</emu-val> value).</li>
-				<li>Let <var>S</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>O</var>).</li>
-				<li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>S</var>).</li>
-				<li>Let <var>intMaxLength</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tolength">ToLength</a>(<var>maxLength</var>).</li>
-				<li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>intMaxLength</var>).</li>
+				<li>Let <var>S</var> be ? <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>O</var>).</li>
+				<li>Let <var>intMaxLength</var> be ? <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tolength">ToLength</a>(<var>maxLength</var>).</li>
 				<li>Let <var>stringLength</var> be the number of elements in S.</li>
 				<li>If <var>intMaxLength</var> is not greater than <var>stringLength</var>, return <var>S</var>.</li>
 				<li>If <var>fillString</var> is
 					<emu-val>undefined</emu-val>, let <var>filler</var> be the empty String.</li>
-				<li>Else, let <var>filler</var> be <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>fillString</var>).</li>
-				<li><a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>filler</var>).</li>
+				<li>Else, let <var>filler</var> be ? <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>fillString</var>).</li>
 				<li>If <var>filler</var> is the empty String, let <var>filler</var> be a string consisting solely of the code unit U+0020 (SPACE).</li>
 				<li>Let <var>fillLen</var> be <var>intMaxLength</var> - <var>stringLength</var>.</li>
 				<li>Let <var>truncatedStringFiller</var> be a new String value consisting of repeated concatenations of <var>filler</var> truncated to length <var>fillLen</var>.</li>
