@@ -12,8 +12,8 @@ const ToLength = argument => {
 	return len;
 };
 
-if (!String.prototype.padLeft) {
-	String.prototype.padLeft = function padLeft(maxLength, fillString = ' ') {
+if (!String.prototype.padStart) {
+	String.prototype.padStart = function padStart(maxLength, fillString = ' ') {
 		const O = RequireObjectCoercible(this);
 		const S = String(O);
 		const intMaxLength = ToLength(maxLength);
@@ -36,8 +36,8 @@ if (!String.prototype.padLeft) {
 	};
 }
 
-if (!String.prototype.padRight) {
-	String.prototype.padRight = function padRight(maxLength, fillString = ' ') {
+if (!String.prototype.padEnd) {
+	String.prototype.padEnd = function padEnd(maxLength, fillString = ' ') {
 		const O = RequireObjectCoercible(this);
 		const S = String(O);
 		const intMaxLength = ToLength(maxLength);

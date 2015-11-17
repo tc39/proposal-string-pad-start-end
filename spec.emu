@@ -4,13 +4,13 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
 <script src="./spec.js"></script>
 <pre class="metadata">
-title: String.prototype.padLeft / padRight
-stage: 1
+title: String.prototype.padStart / padEnd
+stage: 3
 contributors: Jordan Harband
 </pre>
-<emu-clause id="String.prototype.padLeft">
-	<h1>String.prototype.padLeft( maxLength [ , fillString ] )</h1>
-	<p>When the `padLeft` method is called, the following steps are taken:</p>
+<emu-clause id="String.prototype.padStart">
+	<h1>String.prototype.padStart( maxLength [ , fillString ] )</h1>
+	<p>When the `padStart` method is called, the following steps are taken:</p>
 	<emu-alg>
 		1. Let _O_ be ? RequireObjectCoercible(*this* value).
 		1. Let _S_ be ? ToString(_O_).
@@ -29,9 +29,9 @@ contributors: Jordan Harband
 
 </emu-clause>
 
-<emu-clause id="String.prototype.padRight">
-	<h1>String.prototype.padRight( maxLength [ , fillString ] )</h1>
-	<p>When the `padRight` method is called, the following steps are taken:</p>
+<emu-clause id="String.prototype.padEnd">
+	<h1>String.prototype.padEnd( maxLength [ , fillString ] )</h1>
+	<p>When the `padEnd` method is called, the following steps are taken:</p>
 	<emu-alg>
 		1. Let _O_ be ? RequireObjectCoercible(*this* value).
 		1. Let _S_ be ? ToString(_O_).

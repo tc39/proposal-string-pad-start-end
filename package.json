@@ -1,7 +1,7 @@
 {
-	"name": "ecma-proposal-string-pad-left-right",
+	"name": "ecma-proposal-string-pad-start-eng",
 	"version": "0.0.0",
-	"description": "ES7 spec proposal for String.prototype.{padLeft,padRight}",
+	"description": "ES7 spec proposal for String.prototype.{padStart,padEnd}",
 	"main": "index.js",
 	"scripts": {
 		"build": "ecmarkup spec.emu --js=spec.js --css=spec.css | js-beautify -f - --type=html -t > index.html",
@@ -9,13 +9,17 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/ljharb/proposal-string-pad-left-right.git"
+		"url": "git+https://github.com/ljharb/proposal-string-pad-start-end.git"
 	},
 	"keywords": [
 		"String.prototype.padLeft",
 		"String.prototype.padRight",
+		"String.prototype.padStart",
+		"String.prototype.padEnd",
 		"padLeft",
 		"padRight",
+		"padStart",
+		"padEnd",
 		"pad",
 		"padding",
 		"ES7",
@@ -24,9 +28,9 @@
 	"author": "Jordan Harband <ljharb@gmail.com>",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/ljharb/proposal-string-pad-left-right/issues"
+		"url": "https://github.com/tc39/proposal-string-pad-start-end/issues"
 	},
-	"homepage": "https://github.com/ljharb/proposal-string-pad-left-right#readme",
+	"homepage": "https://github.com/tc39/proposal-string-pad-start-end#readme",
 	"dependencies": {},
 	"devDependencies": {
 		"ecmarkup": "^2.8.0",

@@ -1,6 +1,6 @@
-# String.prototype.padLeft( maxLength [ , fillString ] )
+# String.prototype.padStart( maxLength [ , fillString ] )
 
-When the _padLeft_ method is called, the following steps are taken:
+When the _padStart_ method is called, the following steps are taken:
   1. Let _O_ be ? RequireObjectCoercible(*this* value).
   1. Let _S_ be ? ToString(_O_).
   1. Let _intMaxLength_ be ? ToLength(_maxLength_).
@@ -16,9 +16,9 @@ When the _padLeft_ method is called, the following steps are taken:
 Note: the first argument _maxLength_ will be clamped such that it can be no smaller than the length of the *this* value.
 Note: The optional second argument _fillString_ defaults to *" "* (a string consisting of U+0020 SPACE).
 
-# String.prototype.padRight( maxLength [ , fillString ] )
+# String.prototype.padEnd( maxLength [ , fillString ] )
 
-When the _padRight_ method is called, the following steps are taken:
+When the _padEnd_ method is called, the following steps are taken:
   1. Let _O_ be ? RequireObjectCoercible(*this* value).
   1. Let _S_ be ? ToString(_O_).
   1. Let _intMaxLength_ be ? ToLength(_maxLength_).
