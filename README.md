@@ -17,7 +17,7 @@ It is highly probable that the majority of current string padding implementation
 You can view the spec in [markdown format](spec.md) or rendered as [HTML](http://tc39.github.io/proposal-string-pad-left-right/).
 
 ## Naming
-~~ For consistency with [trimStart/trimRight](https://github.com/sebmarkbage/ecmascript-string-left-right-trim), and `reduce`/`reduceRight`, despite the existence of `startsWith`/`endsWith`, we have settled on `padLeft` and `padRight`. ~~
+~~For consistency with [trimStart/trimRight](https://github.com/sebmarkbage/ecmascript-string-left-right-trim), and `reduce`/`reduceRight`, despite the existence of `startsWith`/`endsWith`, we have settled on `padLeft` and `padRight`.~~
 Update per November 2015 TC39 meeting: the names will change to `padStart` and `padEnd`, and the `trimLeft`/`trimRight` proposal should also add non-annex-B aliases `trimStart`/`trimEnd`.
 
 ## Semantics of "min length" vs "max length"
