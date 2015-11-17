@@ -5,8 +5,8 @@
 	<link rel="stylesheet" href="./spec.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
 	<script src="./spec.js"></script>
-	<title>String.prototype.padLeft / padRight</title>
-	<script type="application/json" id="menu-search-biblio">{"clauses":{"String.prototype.padLeft":{"location":"","id":"String.prototype.padLeft","aoid":null,"title":"String.prototype.padLeft( maxLength [ , fillString ] )","number":"1"},"String.prototype.padRight":{"location":"","id":"String.prototype.padRight","aoid":null,"title":"String.prototype.padRight( maxLength [ , fillString ] )","number":"2"},"sec-copyright-and-software-license":{"location":"","id":"sec-copyright-and-software-license","aoid":null,"title":"Copyright & Software License","number":"A"}},"ops":{},"productions":{},"terms":{},"examples":{},"notes":{},"tables":{},"figures":{}}</script>
+	<title>String.prototype.padStart / padEnd</title>
+	<script type="application/json" id="menu-search-biblio">{"clauses":{"String.prototype.padStart":{"location":"","id":"String.prototype.padStart","aoid":null,"title":"String.prototype.padStart( maxLength [ , fillString ] )","number":"1"},"String.prototype.padEnd":{"location":"","id":"String.prototype.padEnd","aoid":null,"title":"String.prototype.padEnd( maxLength [ , fillString ] )","number":"2"},"sec-copyright-and-software-license":{"location":"","id":"sec-copyright-and-software-license","aoid":null,"title":"Copyright & Software License","number":"A"}},"ops":{},"productions":{},"terms":{},"examples":{},"notes":{},"tables":{},"figures":{}}</script>
 </head>
 
 <body>
@@ -18,17 +18,17 @@
 		</div>
 		<div id="menu-toc">
 			<ol class="toc">
-				<li><span class="item-toggle-none"></span><a href="#String.prototype.padLeft" title="String.prototype.padLeft( maxLength [ , fillString ] )"><span class="secnum">1</span> String.prototype.padLeft( maxLength [ , fillString ] )</a></li>
-				<li><span class="item-toggle-none"></span><a href="#String.prototype.padRight" title="String.prototype.padRight( maxLength [ , fillString ] )"><span class="secnum">2</span> String.prototype.padRight( maxLength [ , fillString ] )</a></li>
+				<li><span class="item-toggle-none"></span><a href="#String.prototype.padStart" title="String.prototype.padStart( maxLength [ , fillString ] )"><span class="secnum">1</span> String.prototype.padStart( maxLength [ , fillString ] )</a></li>
+				<li><span class="item-toggle-none"></span><a href="#String.prototype.padEnd" title="String.prototype.padEnd( maxLength [ , fillString ] )"><span class="secnum">2</span> String.prototype.padEnd( maxLength [ , fillString ] )</a></li>
 				<li><span class="item-toggle-none"></span><a href="#sec-copyright-and-software-license" title="Copyright &amp; Software License"><span class="secnum">A</span> Copyright &amp; Software License</a></li>
 			</ol>
 		</div>
 	</div>
-	<h1 class="version">Stage 1 Draft / November 3, 2015</h1>
-	<h1 class="title">String.prototype.padLeft / padRight</h1>
-	<emu-clause id="String.prototype.padLeft">
-		<h1><span class="secnum">1</span>String.prototype.padLeft( maxLength [ , fillString ] )<span class="utils"><span class="anchor"><a href="#String.prototype.padLeft">#</a></span></span></h1>
-		<p>When the <code>padLeft</code> method is called, the following steps are taken:</p>
+	<h1 class="version">Stage 3 Draft / November 17, 2015</h1>
+	<h1 class="title">String.prototype.padStart / padEnd</h1>
+	<emu-clause id="String.prototype.padStart">
+		<h1><span class="secnum">1</span>String.prototype.padStart( maxLength [ , fillString ] )<span class="utils"><span class="anchor"><a href="#String.prototype.padStart">#</a></span></span></h1>
+		<p>When the <code>padStart</code> method is called, the following steps are taken:</p>
 		<emu-alg>
 			<ol>
 				<li>Let <var>O</var> be ? <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-requireobjectcoercible">RequireObjectCoercible</a>(
@@ -54,9 +54,9 @@
 
 	</emu-clause>
 
-	<emu-clause id="String.prototype.padRight">
-		<h1><span class="secnum">2</span>String.prototype.padRight( maxLength [ , fillString ] )<span class="utils"><span class="anchor"><a href="#String.prototype.padRight">#</a></span></span></h1>
-		<p>When the <code>padRight</code> method is called, the following steps are taken:</p>
+	<emu-clause id="String.prototype.padEnd">
+		<h1><span class="secnum">2</span>String.prototype.padEnd( maxLength [ , fillString ] )<span class="utils"><span class="anchor"><a href="#String.prototype.padEnd">#</a></span></span></h1>
+		<p>When the <code>padEnd</code> method is called, the following steps are taken:</p>
 		<emu-alg>
 			<ol>
 				<li>Let <var>O</var> be ? <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-requireobjectcoercible">RequireObjectCoercible</a>(
