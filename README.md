@@ -16,14 +16,14 @@ Due to common use, string padding functions exist in a majority of websites and 
 It is highly probable that the majority of current string padding implementations are inefficient. Bringing this into the platform will improve performance of the web, and developer productivity as they no longer have to implement these common functions.
 
 ## Spec
-You can view the spec in [markdown format](spec.md) or rendered as [HTML](http://tc39.github.io/proposal-string-pad-left-right/).
+You can view the spec in [markdown format](spec.md) or rendered as [HTML](http://tc39.github.io/proposal-string-pad-start-end/).
 
 ## Naming
 ~~For consistency with [trimStart/trimRight](https://github.com/sebmarkbage/ecmascript-string-left-right-trim), and `reduce`/`reduceRight`, despite the existence of `startsWith`/`endsWith`, we have settled on `padLeft` and `padRight`.~~
 Update per November 2015 TC39 meeting: the names will change to `padStart` and `padEnd`, and the `trimLeft`/`trimRight` proposal should also add non-annex-B aliases `trimStart`/`trimEnd`.
 
 ## Semantics of "min length" vs "max length"
-While updating this proposal with spec language, we discussed at length whether the first parameter should determine the minimum length or the maximum length of the padded string. Specifically, "min length" semantics says `'foo'.padRight(4, '12')` would output `foo12`, and "max length" semantics would output `foo1`. Since one of the primary use cases of `padLeft`/`padRight` is for formatting monospaced text in columns, and since "min length" semantics can be achieved via `String#repeat`, we decided that "max length" was the far more useful approach.
+While updating this proposal with spec language, we discussed at length whether the first parameter should determine the minimum length or the maximum length of the padded string. Specifically, "min length" semantics says `'foo'.padEnd(4, '12')` would output `foo12`, and "max length" semantics would output `foo1`. Since one of the primary use cases of `padStart`/`padEnd` is for formatting monospaced text in columns, and since "min length" semantics can be achieved via `String#repeat`, we decided that "max length" was the far more useful approach.
 
 ## Left padding, with respect to the fill string: consistency with other languages
-Per [#6](https://github.com/tc39/proposal-string-pad-left-right/issues/6), the only languages we found that support multiple character fill strings that provide both "left" and "right" functionality are Ruby and PHP. Both language’s form of “pad on the left” takes the *first* part of the fill string, not the last. The clear example of why this matters is: `"abc".padLeft(10, "0123456789")` - taking the last part of the fill string gives `"3456789abc"`, whereas taking the first part gives `"0123456abc"`. In other words, `string.padLeft(mask.length, mask)` should do what one expects.
+Per [#6](https://github.com/tc39/proposal-string-pad-start-end/issues/6), the only languages we found that support multiple character fill strings that provide both "left" and "right" functionality are Ruby and PHP. Both language’s form of “pad on the left” takes the *first* part of the fill string, not the last. The clear example of why this matters is: `"abc".padStart(10, "0123456789")` - taking the last part of the fill string gives `"3456789abc"`, whereas taking the first part gives `"0123456abc"`. In other words, `string.padStart(mask.length, mask)` should do what one expects.
