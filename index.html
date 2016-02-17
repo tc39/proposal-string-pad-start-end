@@ -6,14 +6,39 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
 	<script src="./spec.js"></script>
 	<title>String.prototype.padStart / padEnd</title>
-	<script type="application/json" id="menu-search-biblio">{"clauses":{"String.prototype.padStart":{"location":"","id":"String.prototype.padStart","aoid":null,"title":"String.prototype.padStart( maxLength [ , fillString ] )","number":"1"},"String.prototype.padEnd":{"location":"","id":"String.prototype.padEnd","aoid":null,"title":"String.prototype.padEnd( maxLength [ , fillString ] )","number":"2"},"sec-copyright-and-software-license":{"location":"","id":"sec-copyright-and-software-license","aoid":null,"title":"Copyright & Software License","number":"A"}},"ops":{},"productions":{},"terms":{},"examples":{},"notes":{},"tables":{},"figures":{}}</script>
+	<script type="application/json" id="menu-search-biblio">
+		[{
+			"type": "clause",
+			"id": "String.prototype.padStart",
+			"aoid": null,
+			"title": "String.prototype.padStart( maxLength [ , fillString ] )",
+			"number": "1",
+			"location": "",
+			"key": "String.prototype.padStart( maxLength [ , fillString ] )"
+		}, {
+			"type": "clause",
+			"id": "String.prototype.padEnd",
+			"aoid": null,
+			"title": "String.prototype.padEnd( maxLength [ , fillString ] )",
+			"number": "2",
+			"location": "",
+			"key": "String.prototype.padEnd( maxLength [ , fillString ] )"
+		}, {
+			"type": "clause",
+			"id": "sec-copyright-and-software-license",
+			"aoid": null,
+			"title": "Copyright & Software License",
+			"number": "A",
+			"location": "",
+			"key": "Copyright & Software License"
+		}]
+	</script>
 </head>
 
 <body>
 	<div id="menu-toggle">☰</div>
 	<div id="menu">
-		<div id="menu-search">
-			<input type="text" id="menu-search-box" placeholder="Search...">
+		<div id="menu-search"><input type="text" id="menu-search-box" placeholder="Search...">
 			<div id="menu-search-results" class="inactive"></div>
 		</div>
 		<div id="menu-toc">
@@ -31,15 +56,19 @@
 		<p>When the <code>padStart</code> method is called, the following steps are taken:</p>
 		<emu-alg>
 			<ol>
-				<li>Let <var>O</var> be ? <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-requireobjectcoercible">RequireObjectCoercible</a>(
+				<li>Let <var>O</var> be ?
+					<emu-xref aoid="RequireObjectCoercible"><a href="https://tc39.github.io/ecma262#sec-requireobjectcoercible">RequireObjectCoercible</a></emu-xref>(
 					<emu-val>this</emu-val> value).</li>
-				<li>Let <var>S</var> be ? <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>O</var>).</li>
-				<li>Let <var>intMaxLength</var> be ? <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tolength">ToLength</a>(<var>maxLength</var>).</li>
+				<li>Let <var>S</var> be ?
+					<emu-xref aoid="ToString"><a href="https://tc39.github.io/ecma262#sec-tostring">ToString</a></emu-xref>(<var>O</var>).</li>
+				<li>Let <var>intMaxLength</var> be ?
+					<emu-xref aoid="ToLength"><a href="https://tc39.github.io/ecma262#sec-tolength">ToLength</a></emu-xref>(<var>maxLength</var>).</li>
 				<li>Let <var>stringLength</var> be the number of elements in S.</li>
 				<li>If <var>intMaxLength</var> is not greater than <var>stringLength</var>, return <var>S</var>.</li>
 				<li>If <var>fillString</var> is
 					<emu-val>undefined</emu-val>, let <var>filler</var> be the empty String.</li>
-				<li>Else, let <var>filler</var> be ? <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>fillString</var>).</li>
+				<li>Else, let <var>filler</var> be ?
+					<emu-xref aoid="ToString"><a href="https://tc39.github.io/ecma262#sec-tostring">ToString</a></emu-xref>(<var>fillString</var>).</li>
 				<li>If <var>filler</var> is the empty String, let <var>filler</var> be a string consisting solely of the code unit U+0020 (SPACE).</li>
 				<li>Let <var>fillLen</var> be <var>intMaxLength</var> - <var>stringLength</var>.</li>
 				<li>Let <var>truncatedStringFiller</var> be a new String value consisting of repeated concatenations of <var>filler</var> truncated to length <var>fillLen</var>.</li>
@@ -59,15 +88,19 @@
 		<p>When the <code>padEnd</code> method is called, the following steps are taken:</p>
 		<emu-alg>
 			<ol>
-				<li>Let <var>O</var> be ? <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-requireobjectcoercible">RequireObjectCoercible</a>(
+				<li>Let <var>O</var> be ?
+					<emu-xref aoid="RequireObjectCoercible"><a href="https://tc39.github.io/ecma262#sec-requireobjectcoercible">RequireObjectCoercible</a></emu-xref>(
 					<emu-val>this</emu-val> value).</li>
-				<li>Let <var>S</var> be ? <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>O</var>).</li>
-				<li>Let <var>intMaxLength</var> be ? <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tolength">ToLength</a>(<var>maxLength</var>).</li>
+				<li>Let <var>S</var> be ?
+					<emu-xref aoid="ToString"><a href="https://tc39.github.io/ecma262#sec-tostring">ToString</a></emu-xref>(<var>O</var>).</li>
+				<li>Let <var>intMaxLength</var> be ?
+					<emu-xref aoid="ToLength"><a href="https://tc39.github.io/ecma262#sec-tolength">ToLength</a></emu-xref>(<var>maxLength</var>).</li>
 				<li>Let <var>stringLength</var> be the number of elements in S.</li>
 				<li>If <var>intMaxLength</var> is not greater than <var>stringLength</var>, return <var>S</var>.</li>
 				<li>If <var>fillString</var> is
 					<emu-val>undefined</emu-val>, let <var>filler</var> be the empty String.</li>
-				<li>Else, let <var>filler</var> be ? <a href="http://www.ecma-international.org/ecma-262/6.0/index.html#sec-tostring">ToString</a>(<var>fillString</var>).</li>
+				<li>Else, let <var>filler</var> be ?
+					<emu-xref aoid="ToString"><a href="https://tc39.github.io/ecma262#sec-tostring">ToString</a></emu-xref>(<var>fillString</var>).</li>
 				<li>If <var>filler</var> is the empty String, let <var>filler</var> be a string consisting solely of the code unit U+0020 (SPACE).</li>
 				<li>Let <var>fillLen</var> be <var>intMaxLength</var> - <var>stringLength</var>.</li>
 				<li>Let <var>truncatedStringFiller</var> be a new String value consisting of repeated concatenations of <var>filler</var> truncated to length <var>fillLen</var>.</li>
