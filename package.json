@@ -33,8 +33,8 @@
 	"homepage": "https://github.com/tc39/proposal-string-pad-start-end#readme",
 	"dependencies": {},
 	"devDependencies": {
-		"ecmarkup": "^2.8.1",
-		"js-beautify": "^1.5.10",
-		"tape": "^4.2.2"
+		"ecmarkup": "^3.0.1",
+		"js-beautify": "^1.6.2",
+		"tape": "^4.4.0"
 	}
 }
