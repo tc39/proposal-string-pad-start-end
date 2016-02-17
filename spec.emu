@@ -4,61 +4,47 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
 <script src="./spec.js"></script>
 <pre class="metadata">
-title: String.prototype.padLeft / padRight
-stage: 1
+title: String.prototype.padStart / padEnd
+stage: 3
 contributors: Jordan Harband
 </pre>
-<emu-clause id="String.prototype.padLeft">
-	<h1>String.prototype.padLeft( maxLength [ , fillString ] )</h1>
-	<p>When the `padLeft` method is called, the following steps are taken:</p>
+<emu-clause id="String.prototype.padStart">
+	<h1>String.prototype.padStart( maxLength [ , fillString ] )</h1>
+	<p>When the `padStart` method is called, the following steps are taken:</p>
 	<emu-alg>
-		1. Let _O_ be RequireObjectCoercible(*this* value).
-		1. ReturnIfAbrupt(_O_).
-		1. Let _S_ be ToString(_O_).
-		1. ReturnIfAbrupt(_S_).
-		1. Let _intMaxLength_ be ToLength(_maxLength_).
-		1. ReturnIfAbrupt(_intMaxLength_).
+		1. Let _O_ be ? RequireObjectCoercible(*this* value).
+		1. Let _S_ be ? ToString(_O_).
+		1. Let _intMaxLength_ be ? ToLength(_maxLength_).
 		1. Let _stringLength_ be the number of elements in S.
 		1. If _intMaxLength_ is not greater than _stringLength_, return _S_.
-		1. If _fillString_ is *undefined*, let _fillStr_ be the empty String.
-		1. Else, let _fillStr_ be ToString(_fillString_).
-		1. ReturnIfAbrupt(_fillStr_).
-		1. If _fillStr_ is the empty String, let _fillStr_ be *" "* (a string consisting of a single space).
+		1. If _fillString_ is *undefined*, let _filler_ be the empty String.
+		1. Else, let _filler_ be ? ToString(_fillString_).
+		1. If _filler_ is the empty String, let _filler_ be a string consisting solely of the code unit U+0020 (SPACE).
 		1. Let _fillLen_ be _intMaxLength_ - _stringLength_.
-		1. Let _stringFiller_ be the empty String.
-		1. Repeat, while the length of _stringFiller_ is less than _fillLen_:
-			1. Let _stringFiller_ be a new String value computed by the concatenation of _stringFiller_ and _fillStr_.
-		1. Return a new String value computed by the concatenation of the first _fillLen_ elements of _stringFiller_, and _S_.
+		1. Let _truncatedStringFiller_ be a new String value consisting of repeated concatenations of _filler_ truncated to length _fillLen_.
+		1. Return a new String value computed by the concatenation of _truncatedStringFiller_ and _S_.
 	</emu-alg>
-	<p>The `length` property of the `padLeft` method is *1*.</p>
 	<emu-note>The first argument _maxLength_ will be clamped such that it can be no smaller than the length of the *this* value.</emu-note>
-	<emu-note>The optional second argument _fillString_ defaults to *" "* (a string consisting of a single space).</emu-note>
+	<emu-note>The optional second argument _fillString_ defaults to *" "* (a string consisting of U+0020 SPACE).</emu-note>
 
 </emu-clause>
 
-<emu-clause id="String.prototype.padRight">
-	<h1>String.prototype.padRight( maxLength [ , fillString ] )</h1>
-	<p>When the `padRight` method is called, the following steps are taken:</p>
+<emu-clause id="String.prototype.padEnd">
+	<h1>String.prototype.padEnd( maxLength [ , fillString ] )</h1>
+	<p>When the `padEnd` method is called, the following steps are taken:</p>
 	<emu-alg>
-		1. Let _O_ be RequireObjectCoercible(*this* value).
-		1. ReturnIfAbrupt(_O_).
-		1. Let _S_ be ToString(_O_).
-		1. ReturnIfAbrupt(_S_).
-		1. Let _intMaxLength_ be ToLength(_maxLength_).
-		1. ReturnIfAbrupt(_intMaxLength_).
+		1. Let _O_ be ? RequireObjectCoercible(*this* value).
+		1. Let _S_ be ? ToString(_O_).
+		1. Let _intMaxLength_ be ? ToLength(_maxLength_).
 		1. Let _stringLength_ be the number of elements in S.
 		1. If _intMaxLength_ is not greater than _stringLength_, return _S_.
-		1. If _fillString_ is *undefined*, let _fillStr_ be the empty String.
-		1. Else, let _fillStr_ be ToString(_fillString_).
-		1. ReturnIfAbrupt(_fillStr_).
-		1. If _fillStr_ is the empty String, let _fillStr_ be *" "* (a string consisting of a single space).
+		1. If _fillString_ is *undefined*, let _filler_ be the empty String.
+		1. Else, let _filler_ be ? ToString(_fillString_).
+		1. If _filler_ is the empty String, let _filler_ be a string consisting solely of the code unit U+0020 (SPACE).
 		1. Let _fillLen_ be _intMaxLength_ - _stringLength_.
-		1. Let _stringFiller_ be the empty String.
-		1. Repeat, while the length of _stringFiller_ is less than _fillLen_:
-			1. Let _stringFiller_ be a new String value computed by the concatenation of _stringFiller_ and _fillStr_.
-		1. Return a new String value computed by the concatenation of _S_, and the first _fillLen_ elements of _stringFiller_.
+		1. Let _truncatedStringFiller_ be a new String value consisting of repeated concatenations of _filler_ truncated to length _fillLen_.
+		1. Return a new String value computed by the concatenation of _S_ and _truncatedStringFiller_.
 	</emu-alg>
-	<p>The `length` property of the `padRight` method is *1*.</p>
 	<emu-note>The first argument _maxLength_ will be clamped such that it can be no smaller than the length of the *this* value.</emu-note>
-	<emu-note>The optional second argument _fillString_ defaults to *" "* (a string consisting of a single space).</emu-note>
+	<emu-note>The optional second argument _fillString_ defaults to *" "* (a string consisting of U+0020 SPACE).</emu-note>
 </emu-clause>
