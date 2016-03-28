@@ -1,7 +1,7 @@
 {
 	"name": "ecma-proposal-string-pad-start-eng",
 	"version": "0.0.0",
-	"description": "ES7 spec proposal for String.prototype.{padStart,padEnd}",
+	"description": "ECMAScript spec proposal for String.prototype.{padStart,padEnd}",
 	"main": "index.js",
 	"scripts": {
 		"build": "ecmarkup spec.emu --js=spec.js --css=spec.css | js-beautify -f - --type=html -t > index.html",
@@ -22,7 +22,8 @@
 		"padEnd",
 		"pad",
 		"padding",
-		"ES7",
+		"ECMAScript",
+		"ESNext",
 		"spec"
 	],
 	"author": "Jordan Harband <ljharb@gmail.com>",
