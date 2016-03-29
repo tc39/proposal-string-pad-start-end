@@ -49,7 +49,7 @@
 			</ol>
 		</div>
 	</div>
-	<h1 class="version">Stage 3 Draft / November 17, 2015</h1>
+	<h1 class="version">Stage 3 Draft / March 29, 2016</h1>
 	<h1 class="title">String.prototype.padStart / padEnd</h1>
 	<emu-clause id="String.prototype.padStart">
 		<h1><span class="secnum">1</span>String.prototype.padStart( maxLength [ , fillString ] )<span class="utils"><span class="anchor"><a href="#String.prototype.padStart">#</a></span></span></h1>
@@ -66,10 +66,10 @@
 				<li>Let <var>stringLength</var> be the number of elements in S.</li>
 				<li>If <var>intMaxLength</var> is not greater than <var>stringLength</var>, return <var>S</var>.</li>
 				<li>If <var>fillString</var> is
-					<emu-val>undefined</emu-val>, let <var>filler</var> be the empty String.</li>
+					<emu-val>undefined</emu-val>, let <var>filler</var> be a string consisting solely of the code unit U+0020 (SPACE).</li>
 				<li>Else, let <var>filler</var> be ?
 					<emu-xref aoid="ToString"><a href="https://tc39.github.io/ecma262#sec-tostring">ToString</a></emu-xref>(<var>fillString</var>).</li>
-				<li>If <var>filler</var> is the empty String, let <var>filler</var> be a string consisting solely of the code unit U+0020 (SPACE).</li>
+				<li>If <var>filler</var> is the empty String, return <var>S</var>.</li>
 				<li>Let <var>fillLen</var> be <var>intMaxLength</var> - <var>stringLength</var>.</li>
 				<li>Let <var>truncatedStringFiller</var> be a new String value consisting of repeated concatenations of <var>filler</var> truncated to length <var>fillLen</var>.</li>
 				<li>Return a new String value computed by the concatenation of <var>truncatedStringFiller</var> and <var>S</var>.
@@ -98,10 +98,10 @@
 				<li>Let <var>stringLength</var> be the number of elements in S.</li>
 				<li>If <var>intMaxLength</var> is not greater than <var>stringLength</var>, return <var>S</var>.</li>
 				<li>If <var>fillString</var> is
-					<emu-val>undefined</emu-val>, let <var>filler</var> be the empty String.</li>
+					<emu-val>undefined</emu-val>, let <var>filler</var> be a string consisting solely of the code unit U+0020 (SPACE).</li>
 				<li>Else, let <var>filler</var> be ?
 					<emu-xref aoid="ToString"><a href="https://tc39.github.io/ecma262#sec-tostring">ToString</a></emu-xref>(<var>fillString</var>).</li>
-				<li>If <var>filler</var> is the empty String, let <var>filler</var> be a string consisting solely of the code unit U+0020 (SPACE).</li>
+				<li>If <var>filler</var> is the empty String, return <var>S</var>.</li>
 				<li>Let <var>fillLen</var> be <var>intMaxLength</var> - <var>stringLength</var>.</li>
 				<li>Let <var>truncatedStringFiller</var> be a new String value consisting of repeated concatenations of <var>filler</var> truncated to length <var>fillLen</var>.</li>
 				<li>Return a new String value computed by the concatenation of <var>S</var> and <var>truncatedStringFiller</var>.
@@ -117,7 +117,7 @@
 		<h1><span class="secnum">A</span>Copyright &amp; Software License<span class="utils"><span class="anchor"><a href="#sec-copyright-and-software-license">#</a></span></span></h1>
 
 		<h2>Copyright Notice</h2>
-		<p>© 2015 Jordan Harband</p>
+		<p>© 2016 Jordan Harband</p>
 
 		<h2>Software License</h2>
 		<p>All Software contained in this document ("Software") is protected by copyright and is being made available under the "BSD License", included below. This Software may be subject to third party rights (rights from parties other than Ecma International), including patent rights, and no licenses under such third party rights are granted under this license even if the third party concerned is a member of Ecma International. SEE THE ECMA CODE OF CONDUCT IN PATENT MATTERS AVAILABLE AT http://www.ecma-international.org/memento/codeofconduct.htm FOR INFORMATION REGARDING THE LICENSING OF PATENT CLAIMS THAT ARE REQUIRED TO IMPLEMENT ECMA INTERNATIONAL STANDARDS.</p>
