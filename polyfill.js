@@ -19,8 +19,8 @@ if (!String.prototype.padStart) {
 		const intMaxLength = ToLength(maxLength);
 		const stringLength = ToLength(S.length);
 		if (intMaxLength <= stringLength) { return S; }
-		let filler = typeof fillString === 'undefined' ? '' : String(fillString);
-		if (filler === '') { filler = ' '; }
+		let filler = typeof fillString === 'undefined' ? ' ' : String(fillString);
+		if (filler === '') { return S; }
 		const fillLen = intMaxLength - stringLength;
 		while (filler.length < fillLen) {
 			const fLen = filler.length;
@@ -43,8 +43,8 @@ if (!String.prototype.padEnd) {
 		const intMaxLength = ToLength(maxLength);
 		const stringLength = ToLength(S.length);
 		if (intMaxLength <= stringLength) { return S; }
-		let filler = typeof fillString === 'undefined' ? '' : String(fillString);
-		if (filler === '') { filler = ' '; }
+		let filler = typeof fillString === 'undefined' ? ' ' : String(fillString);
+		if (filler === '') { return S; }
 		const fillLen = intMaxLength - stringLength;
 		while (filler.length < fillLen) {
 			const fLen = filler.length;
