@@ -4,7 +4,7 @@ ECMAScript proposal, specs, tests, and reference implementation for String.proto
 This [initial](http://wiki.ecmascript.org/doku.php?id=strawman:string_padding) proposal was drafted by [@KevinGrandon](https://github.com/kevingrandon) with input from [@rwaldron](https://github.com/rwaldron) and [@dherman](https://github.com/dherman).
 Updated spec drafted by [@ljharb](https://github.com/ljharb) with input from [@rwaldron](https://github.com/rwaldron), [@allenwb](https://github.com/allenwb), and [@dherman](https://github.com/dherman).
 
-This proposal is currently at [stage 3](https://github.com/tc39/ecma262) of the [process](https://tc39.github.io/process-document/).
+This proposal is currently at [stage 4](https://github.com/tc39/proposals/blob/master/finished-proposals.md) of the [process](https://tc39.github.io/process-document/).
 
 Designated TC39 reviewers: @littledan @michaelficarra
 
